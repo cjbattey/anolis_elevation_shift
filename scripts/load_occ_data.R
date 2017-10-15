@@ -121,7 +121,7 @@ anolis$eventID <- paste(anolis$institutionCode,anolis$locality,anolis$year,sep="
 #write.csv(loc,"anolis_localities_27sept2016.csv",row.names = F,fileEncoding = "UTF-8")
 
 #load georeferenced coordinates & use GPS where available
-localities <- read.csv("~/Dropbox/anolis/data/anolis_localities_30sept2016.csv",stringsAsFactors = F) %>% subset(!is.na(lat)) #note fread caused encoding issues with double-quotes.
+localities <- read.csv("data/occurrence/anolis_localities_30sept2016.csv",stringsAsFactors = F) %>% subset(!is.na(lat)) #note fread caused encoding issues with double-quotes.
 localities$long[grepl("GPS|gps",localities$georeferenceSources)] <- localities$decimalLongitude[grepl("GPS|gps",localities$georeferenceSources)]
 localities$lat[grepl("GPS|gps",localities$georeferenceSources)] <- localities$decimalLatitude[grepl("GPS|gps",localities$georeferenceSources)]
 localities$uncertainty[grepl("GPS|gps",localities$georeferenceSources)] <- 30
@@ -189,10 +189,10 @@ anolis.full <- anolis
 anolis <- subset(anolis,(uncertainty <= 2000) | (is.na(uncertainty) & !is.na(elevation)))
 good.species <- ddply(anolis,.(species,timebin),summarize,n=length(day)) %>% subset(.,n>200) %>% .$species
 anolis <- subset(anolis,species %in% good.species)
-#write.table(anolis,"~/Dropbox/anolis/data/anolis_data.csv",sep=",")
+#write.table(anolis,"data/anolis_data.csv",sep=",")
 
 #add sight records
-sight <- read.csv("~/Dropbox/anolis/data/locs/Anolis_sight_records.csv")
+sight <- read.csv("data/occurrence/Anolis_sight_records.csv")
 sight$basisOfRecord <- "sight"
 sight$alt <- data.frame(sight$long,sight$lat) %>%             #get uncertainty-buffered elevation
               SpatialPoints(proj4string=crs(proj4.wgs)) %>%
@@ -209,7 +209,7 @@ sight$pt.alt <- data.frame(sight$long,sight$lat) %>%        #get point elevation
                             unlist()
 sight$alt[!is.na(sight$Elev)] <- sight$Elev[!is.na(sight$Elev)]   #use verbatim elevations where available
 sight$pt.alt[!is.na(sight$Elev)] <- sight$Elev[!is.na(sight$Elev)] 
-#write.csv(sight,"~/Dropbox/anolis/data/locs/Anolis_sight_records_georeferenced.csv")
+#write.csv(sight,"data/locs/Anolis_sight_records_georeferenced.csv")
 
 
 
