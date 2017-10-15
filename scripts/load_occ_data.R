@@ -1,5 +1,4 @@
 #load, filter, and georeference occurrence records
-setwd("~/Dropbox/anolis/")
 library(data.table);library(raster);library(ggplot2);library(plyr);library(foreach);library(stringr);
 library(magrittr);library(dismo);library(rgeos)
 
@@ -20,11 +19,11 @@ proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +n
 # alt1s<- raster("~/Dropbox/anolis/data/elevation/PuertoRico_altitude_1sec_USGSNED2013.tif") %>% crop(ext.pr) %>% 
 #   projectRaster(.,projectExtent(.,proj4.utm))
 
-alt <- raster("~/Dropbox/anolis/data/alt_30s_UTM19N.tif")
-alt1s <- raster("~/Dropbox/anolis/data/alt_1s_UTM19N.tif")
+alt <- raster("data/alt_30s_UTM19N.tif")
+alt1s <- raster("data/alt_1s_UTM19N.tif")
 
 #remove embedded nulls & read in data
-file <- "./data/locs/gbif_PRanolis/occurrence.txt"
+file <- "data/gbif_PRanolis/occurrence.txt"
 tt <- tempfile()  
 system(paste0("tr < ", file, " -d '\\000' >", tt))
 anolis <- data.frame(fread(tt))

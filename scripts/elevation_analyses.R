@@ -10,11 +10,11 @@ proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +n
 
 ############ data loading & prep ##############
 #load occurrence data (see load_occ_data.R for pre-processing of gbif data)
-sight <- read.csv("data/Anolis_sight_records_georeferenced.csv")
+sight <- read.csv("data/occurrence/Anolis_sight_records_georeferenced.csv")
 sight$ageClass <- sight$year>1977
 sight$ageClass[sight$ageClass==T] <- 4
 sight$ageClass[sight$ageClass==F] <- 2
-anolis <- read.csv("data/anolis_data.csv")
+anolis <- read.csv("data/occurrence/anolis_data.csv")
 anolis <- subset(anolis,ageClass %in% c(2,4))
 anolis <- anolis[!duplicated(anolis$gbifID),] #drop duplicates (strangely, these were in the file downloaded from GBIF)
 comb <- rbind.fill(anolis,sight)
@@ -33,9 +33,9 @@ ext.pr <- extent(-67.6,-65.2,17.8,18.7)
 ext.yunque <- extent(825000,850000,2015000,2040000)
 proj4.wgs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-alt <- raster("~/Dropbox/anolis/data/alt_30s_UTM19N.tif")
-alt1s <- raster("~/Dropbox/anolis/data/alt_1s_UTM19N.tif")
-coasts <- shapefile("~/Documents/worldclim/ne_10m_coastline/ne_10m_coastline.shp") %>% 
+alt <- raster("data/elevation/alt_30s_UTM19N.tif")
+alt1s <- raster("data/elevation/alt_1s_UTM19N.tif")
+coasts <- shapefile("data/ne_10m_coastline/ne_10m_coastline.shp") %>% 
             crop(ext.pr)
 coasts.utm <- spTransform(coasts,proj4.utm)
 
@@ -60,6 +60,9 @@ comb_w_all <- rbind(comb,comb_w_all)
 anolis_w_all <- anolis
 anolis_w_all$species <- "All Species"
 anolis_w_all <- rbind(anolis,anolis_w_all)
+
+#summarize by locality group for per-locality analyses & plots
+locs <- ddply(comb,.(locality_group,ageClass2,ageClass,species),summarize,n=length(alt),alt=mean(alt),lat=mean(lat),long=mean(long))
 
 ############# end data loading and prep ################
 ########################################################
@@ -194,9 +197,6 @@ grid.arrange(forest_maps,forest_histograms,layout_matrix=matrix(c(1,1,1,1,
   
 #############################################################
 ############# elevation shift stats and figures #############
-#summarize by locality group for per-locality analyses & plots
-locs <- ddply(comb,.(locality_group,ageClass2,ageClass,species),summarize,n=length(alt),alt=mean(alt),lat=mean(lat),long=mean(long))
-  
 #violin plot of elevation by time period
 elevation_plot <- ggplot(data=comb,aes(x=factor(ageClass2),y=alt))+
   facet_grid(.~species)+

@@ -1,0 +1,37 @@
+#Helmeretal20008 JGRBiogeosci landcover classification raster key
+0	Bare
+1	High Density Urban 1991
+2	New Urban and Bare 1991-2000
+3	Low Density Development 2000
+4	Pasture and Agriculture
+5	Volcanic Dry Forest Age 1-9yr
+6	Volcanic Dry Forest Age 10-22yr
+7	Volcanic Dry Forest Age 23-49yr
+8	Volcanic Dry Forest Age 50-64yr
+9	Volcanic Humid Forest Age 1-9yr
+10	Volcanic Humid Forest Age 10-22yr
+11	Volcanic Humid Forest Age 23-49yr
+12	Volcanic Humid Forest Age 50-64yr
+13	Karst Dry Forest Age 1-9yr
+14	Karst Dry Forest Age 10-22yr
+15	Karst Dry Forest Age 23-49yr
+16	Karst Dry Forest Age 50-64yr
+17	Karst Humid Forest Age 1-9yr
+18	Karst Humid Forest Age 10-22yr
+19	Karst Humid Forest Age 23-49yr
+20	Karst Humid Forest Age 49-64yr
+21	Serpentine Dry Forest Age 1-9yr
+22	Serpentine Dry Forest Age 10-22yr
+23	Serpentine Dry Forest Age 23-49yr
+24	Serpentine Dry Forest Age 50-64yr
+25	Serpentine Humid Forest Age 1-9yr
+26	Serpentine Humid Forest Age 10-22yr
+27	Serpentine Humid Forest Age 23-49yr
+28	Serpentine Humid Forest Age 50-65yr
+29	Forested Wetland Age 1-9yr
+30	Forested Wetland Age 10-22yr
+31	Forested Wetland Age 23-49yr
+32	Forested Wetland Age 50-65yr
+33	Emergent Wetland
+34	Coastal Sand/Rock
+35	Water
