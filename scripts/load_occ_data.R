@@ -39,7 +39,7 @@ anolis <- subset(anolis,basisOfRecord=="PRESERVED_SPECIMEN" & species != "")
 anolis <- subset(anolis,locality != "")
 
 #merge FMNH full localities
-fmnh.mus <- read.csv("~/Dropbox/anolis/data/locs/fmnh_anolis.csv")
+fmnh.mus <- read.csv("data/occurrence/fmnh_anolis.csv")
 names(fmnh.mus) <- c("catalogNumber","collectionNumber","Taxon","verbatimLocality","Details","verbatimEventDate","Details2",
                      "recordedBy","IDnotes","specimen.loc","habitatNotes","sex")
 fmnh.gbif <- subset(anolis,institutionCode == "FMNH") %>% arrange(.,catalogNumber) #sort by catalogNumber bc merge will sort on the "by" column
