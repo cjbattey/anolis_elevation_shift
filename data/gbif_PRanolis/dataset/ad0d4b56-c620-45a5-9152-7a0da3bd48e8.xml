@@ -1,0 +1,136 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="ad0d4b56-c620-45a5-9152-7a0da3bd48e8"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/cplkwg</alternateIdentifier>
+    <alternateIdentifier>http://65.52.215.125/ipt/resource?r=reptile</alternateIdentifier>
+    <alternateIdentifier>http://iptsnomnh.cloudapp.net:8080/ipt/resource.do?r=reptile</alternateIdentifier>
+    <alternateIdentifier>ad0d4b56-c620-45a5-9152-7a0da3bd48e8</alternateIdentifier>
+  <title>Reptile Specimens</title>
+<creator>
+    <individualName>
+<givenName>Cameron</givenName>      <surName>Siler</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Curator</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-3718</phone><electronicMailAddress>camsiler@ou.edu</electronicMailAddress><onlineUrl>http://www.cameronsiler.com/</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Paul</givenName>      <surName>King</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Head of IT</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-1018</phone><electronicMailAddress>pking@ou.edu</electronicMailAddress><onlineUrl>http://samnoblemuseum.ou.edu</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Jessa</givenName>      <surName>Watters</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>4053257771</phone><electronicMailAddress>jwatters@ou.edu</electronicMailAddress><onlineUrl>http://samnoblemuseum.ou.edu</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Elsbeth</givenName>      <surName>Dowd</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Registrar</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-1035</phone><electronicMailAddress>efield@ou.edu</electronicMailAddress><onlineUrl>http://samnoblemuseum.ou.edu</onlineUrl>    <role>POINT_OF_CONTACT</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Sarah</givenName>      <surName>Sanger</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Information Systems Lead</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-4168</phone><electronicMailAddress>ssanger@ou.edu</electronicMailAddress><onlineUrl>http://samnoblemuseum.ou.edu</onlineUrl>    <role>POINT_OF_CONTACT</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Paul</givenName>      <surName>King</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Head of IT</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-1018</phone><electronicMailAddress>pking@ou.edu</electronicMailAddress><onlineUrl>http://samnoblemuseum.ou.edu</onlineUrl>    <role>POINT_OF_CONTACT</role>
+</associatedParty>
+<pubDate>
+        2016-05-18
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>The Herpetology collection currently contains nearly 52,000 cataloged specimens of amphibians and reptiles. A large proportion of the collection is composed of amphibians and reptiles from the United States (46 states are represented), and many of these species are from the Southern Plains and Oklahoma. Approximately 60% (~31,000 specimens) of the collection is made up of Oklahoma specimens, making it the largest repository of Oklahoma reptiles. The collection also contains specimens from a total of 50 countries, with relatively large numbers from Brazil, Mexico, Ecuador, and Egypt. An early collection of specimens is from the Galapagos Islands of Ecuador.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Reptile</keyword>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <additionalInfo>
+    <para>The SNOMNH desires to provide only accurate data. Although databases are refreshed and updated regularly, the databases are provided ‘as is’ without express or implied warranty, including the implied warranty of merchantability and fitness for a particular purpose. The SNOMNH does not accept responsibility for the accuracy of data taken by the user. The user accepts the responsibility of verifying the data, in consultation with the curatorial staff and/or by inspection of the specimens or objects and the collection catalogue. The SNOMNH shall not be liable for any damages, injury, or loss suffered by the users of the database or the software, programming, and other documentation found on these web pages or in these databases.</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>Public Domain (CC0 1.0)</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://samnoblemuseum.ou.edu/collections-and-research/herpetology/</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Global</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+          <rangeOfDates>
+            <beginDate>
+              <calendarDate>        1904-01-01
+</calendarDate>
+            </beginDate>
+            <endDate>
+              <calendarDate>        1904-01-01
+</calendarDate>
+            </endDate>
+          </rangeOfDates>
+      </temporalCoverage>
+  </coverage>
+  <contact>
+    <individualName>
+<givenName>Cameron</givenName>      <surName>Siler</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Curator</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-3718</phone><electronicMailAddress>camsiler@ou.edu</electronicMailAddress><onlineUrl>http://www.cameronsiler.com/</onlineUrl>  </contact>
+  <methods>
+      <methodStep>
+        <description>
+          <para></para>
+        </description>
+      </methodStep>
+  </methods>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-05-18T05:08:20.417+02:00</dateStamp>
+        <citation>Sam Noble Oklahoma Museum of Natural History: Reptile Specimens</citation>
+        <resourceLogoUrl>http://65.52.215.125/ipt/logo.do?r=reptile</resourceLogoUrl>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

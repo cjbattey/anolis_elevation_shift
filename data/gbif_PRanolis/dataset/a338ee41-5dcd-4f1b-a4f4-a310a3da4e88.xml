@@ -1,0 +1,37 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="a338ee41-5dcd-4f1b-a4f4-a310a3da4e88"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/q0xpml</alternateIdentifier>
+  <title>Herps Specimens</title>
+<creator>
+</creator>
+<metadataProvider>
+</metadataProvider>
+<associatedParty>
+<positionName>Systems Administrator</positionName><phone>+1 (915) 747-5308</phone><electronicMailAddress>lehernan@utep.edu</electronicMailAddress></associatedParty>
+<associatedParty>
+<positionName>Assistant Chair of Biological Sciences</positionName><phone>+1 (915) 747-5844</phone><electronicMailAddress>clieb@utep.edu</electronicMailAddress></associatedParty>
+<language>en</language>
+<abstract>
+  <para>UTEP Herps specimens</para>
+</abstract>
+  <intellectualRights>
+    <para>UTEP data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the University of Texas at El Paso. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and UTEP notified. The University of Texas at El Paso or its staff are not responsible for damages, injury or loss due to the use of these data.</para>
+  </intellectualRights>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-01-28T04:39:57.308+01:00</dateStamp>
+        <citation>UTEP Herp Collection</citation>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

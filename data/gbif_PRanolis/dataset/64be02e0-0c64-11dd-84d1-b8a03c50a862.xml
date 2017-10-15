@@ -1,0 +1,73 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="64be02e0-0c64-11dd-84d1-b8a03c50a862"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/b9o7h4</alternateIdentifier>
+    <alternateIdentifier>http://www.gbif.se/ipt/resource?r=nrm-herpetology</alternateIdentifier>
+    <alternateIdentifier>http://www.gbif.se/ipt/resource.do?r=nrm-herpetology</alternateIdentifier>
+    <alternateIdentifier>64be02e0-0c64-11dd-84d1-b8a03c50a862</alternateIdentifier>
+    <alternateIdentifier>1036</alternateIdentifier>
+  <title>NRM-Herpetology</title>
+<creator>
+    <individualName>
+<givenName>Sven</givenName>      <surName>Kullander</surName>
+    </individualName>
+<organizationName>Swedish museum of natural history</organizationName><positionName>Senior Curator</positionName>    <address>
+<country>SWEDEN</country>    </address>
+<electronicMailAddress>sven.kullander@nrm.se</electronicMailAddress></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Sven</givenName>      <surName>Kullander</surName>
+    </individualName>
+<organizationName>Swedish museum of natural history</organizationName><positionName>Senior Curator</positionName>    <address>
+<country>SWEDEN</country>    </address>
+<electronicMailAddress>sven.kullander@nrm.se</electronicMailAddress></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Sven</givenName>      <surName>Kullander</surName>
+    </individualName>
+<organizationName>Swedish museum of natural history</organizationName><positionName>Senior Curator</positionName>    <address>
+<country>SWEDEN</country>    </address>
+<electronicMailAddress>sven.kullander@nrm.se</electronicMailAddress>    <role>USER</role>
+</associatedParty>
+<pubDate>
+        2016-05-19
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>This database contains information on the so far registered specimens in the Herpetology Collection of the Swedish Museum of Natural History.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <intellectualRights>
+    <para>Public Domain (CC0 1.0)</para>
+  </intellectualRights>
+  <contact>
+    <individualName>
+<givenName>Sven</givenName>      <surName>Kullander</surName>
+    </individualName>
+<organizationName>Swedish museum of natural history</organizationName><positionName>Senior Curator</positionName>    <address>
+<country>SWEDEN</country>    </address>
+<electronicMailAddress>sven.kullander@nrm.se</electronicMailAddress>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-05-19T12:13:56.712+02:00</dateStamp>
+        <citation>GBIF-Sweden: NRM-Herpetology</citation>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

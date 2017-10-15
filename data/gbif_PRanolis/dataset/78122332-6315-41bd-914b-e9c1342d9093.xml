@@ -1,0 +1,121 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="78122332-6315-41bd-914b-e9c1342d9093"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/419lza</alternateIdentifier>
+    <alternateIdentifier>http://ipt.vertnet.org:8080/ipt/resource.do?r=uwbm_herp</alternateIdentifier>
+    <alternateIdentifier>78122332-6315-41bd-914b-e9c1342d9093</alternateIdentifier>
+    <alternateIdentifier>14864</alternateIdentifier>
+  <title>UWBM Herpetology Collection (Arctos)</title>
+<creator>
+    <individualName>
+<givenName>Adam</givenName>      <surName>Leache</surName>
+    </individualName>
+<organizationName>University of Washington Burke Museum</organizationName><positionName>Curator of Genetic Resources and Herpetology</positionName>    <address>
+<deliveryPoint>Department of Biology, 24 Kincaid Hall, University of Washington</deliveryPoint><city>Seattle</city><administrativeArea>WA</administrativeArea><postalCode>98195-1800</postalCode><country>UNITED_STATES</country>    </address>
+<phone>(206) 543-7622</phone><electronicMailAddress>leache@uw.edu</electronicMailAddress><onlineUrl>http://faculty.washington.edu/leache/wordpress/</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Adam</givenName>      <surName>Leache</surName>
+    </individualName>
+<organizationName>University of Washington Burke Museum</organizationName><positionName>Curator of Genetic Resources and Herpetology</positionName>    <address>
+<deliveryPoint>Department of Biology, 24 Kincaid Hall, University of Washington</deliveryPoint><city>Seattle</city><administrativeArea>WA</administrativeArea><postalCode>98195-1800</postalCode><country>UNITED_STATES</country>    </address>
+<phone>(206) 543-7622</phone><electronicMailAddress>leache@uw.edu</electronicMailAddress><onlineUrl>http://faculty.washington.edu/leache/wordpress/</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Sharon</givenName>      <surName>Birks</surName>
+    </individualName>
+<organizationName>University of Washington Burke Museum</organizationName><positionName>Genetic Resources Manager</positionName>    <address>
+<deliveryPoint>Box 353010</deliveryPoint><city>Seattle</city><administrativeArea>WA</administrativeArea><postalCode>98195</postalCode><country>UNITED_STATES</country>    </address>
+<phone>(206) 221-8462</phone><electronicMailAddress>sbirks@u.washington.edu</electronicMailAddress><onlineUrl>http://www.burkemuseum.org/genetic/sharon</onlineUrl>    <role>ADMINISTRATIVE_POINT_OF_CONTACT</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Dusty</givenName>      <surName>McDonald</surName>
+    </individualName>
+<organizationName>University of Alaska Museum</organizationName><positionName>Arctos Database Programmer</positionName><electronicMailAddress>dlmcdonald@alaska.edu</electronicMailAddress><onlineUrl>http://arctos.database.museum</onlineUrl>    <role>POINT_OF_CONTACT</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>John</givenName>      <surName>Wieczorek</surName>
+    </individualName>
+<organizationName>Museum of Vertebrate Zoology at UC Berkeley</organizationName><positionName>Information Architect</positionName><electronicMailAddress>tuco@berkeley.edu</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>David</givenName>      <surName>Bloom</surName>
+    </individualName>
+<positionName>VertNet Coordinator</positionName><electronicMailAddress>dbloom@vertnet.org</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Laura</givenName>      <surName>Russell</surName>
+    </individualName>
+<organizationName>VertNet</organizationName><positionName>VertNet Programmer</positionName><electronicMailAddress>larussell@vertnet.org</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<pubDate>
+        2016-04-27
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>The herpetological collection at the UW Burke Museum contains over 8,000 specimens of amphibians and reptiles. The collection has particularly strong geographic representation of the Pacific Northwest. More than 2,200 specimens are forest-dwelling amphibians from Western Washington obtained during wildlife studies in the 1980s and early 1990s. About 900 are garter snakes collected during the mid-1900s. In 2010, Dr. Adam Leache joined the Burke Museum as Curator of Genetic Resources and Herpetology. The entire collection was inventoried, catalogued, and georeferenced. This transition made the Burke Herpetology data searchable and mappable to the public for the first time. The geographic scope of the collection has expended greatly since 2010, and new collections from Puerto Rico, Mexico, and Ghana are now available that reflect active research programs by herpetology staff. The collection consists largely of alcohol-reserved specimens with a small number of photographs and skeletons. Genetic resources are available for all specimens collected since 2010.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <intellectualRights>
+    <para>http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://www.burkemuseum.org/herpetology</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>The UW Burke Museum herpetology collection is global, with especially strong holdings from the Pacific Northwest, Puerto Rico, Mexico, and Ghana.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+      </temporalCoverage>
+        <taxonomicCoverage>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Amphibia, Reptilia</taxonRankValue>
+            </taxonomicClassification>
+        </taxonomicCoverage>
+  </coverage>
+  <contact>
+    <individualName>
+<givenName>Adam</givenName>      <surName>Leache</surName>
+    </individualName>
+<organizationName>University of Washington Burke Museum</organizationName><positionName>Curator of Genetic Resources and Herpetology</positionName>    <address>
+<deliveryPoint>Department of Biology, 24 Kincaid Hall, University of Washington</deliveryPoint><city>Seattle</city><administrativeArea>WA</administrativeArea><postalCode>98195-1800</postalCode><country>UNITED_STATES</country>    </address>
+<phone>(206) 543-7622</phone><electronicMailAddress>leache@uw.edu</electronicMailAddress><onlineUrl>http://faculty.washington.edu/leache/wordpress</onlineUrl>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-04-28T05:34:25.932+02:00</dateStamp>
+        <citation>University of Washington Burke Museum Herpetology Collection</citation>
+        <livingTimePeriod>1900-present</livingTimePeriod>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

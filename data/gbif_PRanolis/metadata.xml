@@ -1,0 +1,396 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="10.15468/dl.kwznhp"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+    <alternateIdentifier>0004665-160509122628363</alternateIdentifier>
+  <title>GBIF Occurrence Download 10.15468/dl.kwznhp</title>
+<creator>
+    <individualName>
+      <surName>GBIF Download Service</surName>
+    </individualName>
+<electronicMailAddress>support@gbif.org</electronicMailAddress></creator>
+<metadataProvider>
+    <individualName>
+      <surName>GBIF Download Service</surName>
+    </individualName>
+<electronicMailAddress>support@gbif.org</electronicMailAddress></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Donna</givenName>      <surName>Dittmann</surName>
+    </individualName>
+<organizationName>Louisiana State University Museum of Natural Science</organizationName><positionName>Collections Manager</positionName>    <address>
+<deliveryPoint>119 Foster Hall</deliveryPoint><city>Baton Rouge</city><administrativeArea>LA</administrativeArea><postalCode>70803</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 225-578-2855</phone><electronicMailAddress>ddittma@lsu.edu</electronicMailAddress><onlineUrl>http://sites01.lsu.edu/wp/mns/research-collections/genetic-resources/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Rafe</givenName>      <surName>Brown</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>Curator-in-Charge of Herpetology</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 785-864-3403</phone><electronicMailAddress>rafe@ku.edu</electronicMailAddress><onlineUrl>http://herpetology.biodiversity.ku.edu/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Greg</givenName>      <surName>Watkins-Colwell</surName>
+    </individualName>
+<organizationName>Yale Peabody Museum</organizationName><positionName>Division of Vertebrate Zoology</positionName>    <address>
+<deliveryPoint>170 Whitney Avenue</deliveryPoint><city>New Haven</city><administrativeArea>CT</administrativeArea><postalCode>06511</postalCode><country>UNITED_STATES</country>    </address>
+<phone>203-432-3791</phone><electronicMailAddress>gregory.watkins-colwell@yale.edu</electronicMailAddress><onlineUrl>http://www.peabody.yale.edu</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Dekker</givenName>      <surName>Rene</surName>
+    </individualName>
+<organizationName>Naturalis Biodiversity Center</organizationName><positionName>Head Zoological collections</positionName>    <address>
+<deliveryPoint>PO Box 9517</deliveryPoint><city>Leiden</city><administrativeArea>Zuid Holland</administrativeArea><postalCode>NL-2300 RA</postalCode><country>NETHERLANDS</country>    </address>
+<phone>+31.71.7519600</phone><electronicMailAddress>collectie@naturalis.nl</electronicMailAddress><onlineUrl>https://science.naturalis.nl/en/collection/naturalis-collections/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Rick</givenName>      <surName>Feeney</surName>
+    </individualName>
+<organizationName>Natural History Museum of Los Angeles County</organizationName><positionName>Fishes Collection Manager</positionName>    <address>
+<deliveryPoint>900 Exposition Blvd.</deliveryPoint><city>Los Angeles</city><administrativeArea>CA</administrativeArea><postalCode>90007</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 213 763 3374</phone><electronicMailAddress>rfeeney@nhm.org</electronicMailAddress><onlineUrl>http://www.nhm.org/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>David</givenName>      <surName>Dickey</surName>
+    </individualName>
+<organizationName>American Museum of Natural History</organizationName><positionName>Sr. Scientific Asst.</positionName>    <address>
+<deliveryPoint>Central Park West at 79th Street</deliveryPoint><city>New York</city><administrativeArea>NY</administrativeArea><postalCode>10024</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 212-313-7783</phone><electronicMailAddress>dickey@amnh.org</electronicMailAddress><onlineUrl>http://www.amnh.org/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Greg</givenName>      <surName>Schneider</surName>
+    </individualName>
+<organizationName>University of Michigan Museum of Zoology</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>1109 Geddes Ave., Room 2032 Ruthven</deliveryPoint><city>Ann Arbor</city><administrativeArea>MI</administrativeArea><postalCode>48109</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 734-647-1927</phone><electronicMailAddress>ges@umich.edu</electronicMailAddress><onlineUrl>http://www.lsa.umich.edu/ummz/default.asp</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Heather</givenName>      <surName>Prestridge</surName>
+    </individualName>
+<organizationName>Texas A&amp;M University Biodiversity Research and Teaching Collections</organizationName><positionName>Curator</positionName>    <address>
+<deliveryPoint>Department of Wildlife and Fisheries Sciences, TAMU 2258</deliveryPoint><city>College Station</city><administrativeArea>TX</administrativeArea><postalCode>77843</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 (979) 845-5783</phone><electronicMailAddress>hlprestridge@tamu.edu</electronicMailAddress><onlineUrl>http://brtc.tamu.edu</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Ken-ichi</givenName>      <surName>Ueda</surName>
+    </individualName>
+<organizationName>iNaturalist.org</organizationName><positionName>Co-director</positionName>    <address>
+<deliveryPoint>55 Music Concourse Dr., Golden Gate Park</deliveryPoint><city>San Francsico</city><administrativeArea>CA</administrativeArea><postalCode>94118</postalCode><country>UNITED_STATES</country>    </address>
+<electronicMailAddress>kueda@inaturalist.org</electronicMailAddress><onlineUrl>http://www.inaturalist.org/people/kueda</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Sharon</givenName>      <surName>Grant</surName>
+    </individualName>
+<organizationName>Field Museum of Natural History</organizationName><positionName>Technology Liaison to Science</positionName>    <address>
+<deliveryPoint>1400 S Lake Shore Drive</deliveryPoint><city>Chicago</city><administrativeArea>IL</administrativeArea><postalCode>60605</postalCode><country>UNITED_STATES</country>    </address>
+<phone>3126657203</phone><electronicMailAddress>sgrant@fieldmuseum.org</electronicMailAddress><onlineUrl>http://www.fieldmuseum.org</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Travis</givenName>      <surName>LaDuc</surName>
+    </individualName>
+<organizationName>Texas Natural History Collections</organizationName><positionName>Assistant Curator</positionName>    <address>
+<deliveryPoint>10100 Burnet RD, PRC 176/R4000</deliveryPoint><city>Austin</city><administrativeArea>TX</administrativeArea><postalCode>78758-4445</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 512-475-6339</phone><electronicMailAddress>travieso@austin.utexas.edu</electronicMailAddress><onlineUrl>http://www.utexas.edu/tmm/tnhc/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Amy</givenName>      <surName>Lathrop</surName>
+    </individualName>
+<organizationName>Royal Ontario Museum</organizationName><positionName>Collections Technician</positionName>    <address>
+<deliveryPoint>100 Queen&apos;s Park</deliveryPoint><city>Toronto</city><administrativeArea>Ontario</administrativeArea><postalCode>M5S 2C6</postalCode><country>CANADA</country>    </address>
+<phone>1-416-586-5899</phone><electronicMailAddress>amyl@rom.on.ca</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Gary</givenName>      <surName>Shugart</surName>
+    </individualName>
+<organizationName>Slater Museum of Natural History, University of Puget Sound</organizationName><positionName>Collections Manager</positionName>    <address>
+<deliveryPoint>1500 N. Warner</deliveryPoint><city>Tacoma</city><administrativeArea>WA</administrativeArea><postalCode>98416</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 253-879-3356</phone><electronicMailAddress>gshugart@pugetsound.edu</electronicMailAddress><onlineUrl>http://www.pugetsound.edu/academics/academic-resources/slater-museum</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Christy</givenName>      <surName>McCain</surName>
+    </individualName>
+<organizationName>University of Colorado Museum of Natural History</organizationName><positionName>Curator of Vertebrate Zoology</positionName>    <address>
+<deliveryPoint>Henderson Building, 15th and Broadway</deliveryPoint><city>Boulder</city><administrativeArea>CO</administrativeArea><postalCode>80309</postalCode><country>UNITED_STATES</country>    </address>
+<phone>303-735-1016</phone><electronicMailAddress>christy.mccain@colorado.edu</electronicMailAddress><onlineUrl>http://cumuseum.colorado.edu/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Caroline</givenName>      <surName>Pepermans</surName>
+    </individualName>
+<organizationName>Naturalis Biodiversity Center</organizationName><positionName>Head Geological collections</positionName>    <address>
+<deliveryPoint>PO Box 9517</deliveryPoint><city>Leiden</city><administrativeArea>Zuid Holland</administrativeArea><postalCode>NL-2300 RA</postalCode><country>NETHERLANDS</country>    </address>
+<phone>+31.71.7519600</phone><electronicMailAddress>collectie@naturalis.nl</electronicMailAddress><onlineUrl>https://science.naturalis.nl/en/collection/naturalis-collections/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+<positionName>ASU Biological Collections Curator</positionName><phone>480.965.8620</phone><electronicMailAddress>Anthony.Gill@asu.edu</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Thomas</givenName>      <surName>Orrell</surName>
+    </individualName>
+<organizationName>National Museum of Natural History, Smithsonian Institution</organizationName><positionName>Branch Chief, NMNH Informatics</positionName>    <address>
+<deliveryPoint>P.O. Box 37012, MRC 136</deliveryPoint><city>Washington</city><administrativeArea>DC</administrativeArea><postalCode>20013-7012</postalCode><country>UNITED_STATES</country>    </address>
+<phone>202-633-2151</phone><electronicMailAddress>orrellt@si.edu</electronicMailAddress><onlineUrl>http://collections.mnh.si.edu</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Mogens</givenName>      <surName>Andersen</surName>
+    </individualName>
+<organizationName>SNM</organizationName><positionName>Assistant curator</positionName>    <address>
+<deliveryPoint>Universitetsparken 15</deliveryPoint><city>Copenhagen OE</city><postalCode>2100</postalCode><country>DENMARK</country>    </address>
+<electronicMailAddress>mandersen@snm.ku.dk</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Steven</givenName>      <surName>van der Mije</surName>
+    </individualName>
+<organizationName>Naturalis Biodiversity Center</organizationName><positionName>Head Vertebrate collections</positionName>    <address>
+<deliveryPoint>PO Box 9517</deliveryPoint><city>Leiden</city><administrativeArea>Zuid Holland</administrativeArea><postalCode>NL-2300 RA</postalCode><country>NETHERLANDS</country>    </address>
+<phone>+31.71.7519600</phone><electronicMailAddress>collectie@naturalis.nl</electronicMailAddress><onlineUrl>https://science.naturalis.nl/en/collection/naturalis-collections/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Bradford</givenName>      <surName>Hollingsworth</surName>
+    </individualName>
+<organizationName>San Diego Natural History Museum</organizationName><positionName>Curator of Herpetology</positionName>    <address>
+<deliveryPoint>1788 El Prado, Balboa Park</deliveryPoint><city>San Diego</city><administrativeArea>CA</administrativeArea><postalCode>92101</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 619-255-0277</phone><electronicMailAddress>bhollingsworth@sdnhm.org</electronicMailAddress><onlineUrl>http://www.sdnhm.org/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Adam</givenName>      <surName>Leache</surName>
+    </individualName>
+<organizationName>University of Washington Burke Museum</organizationName><positionName>Curator of Genetic Resources and Herpetology</positionName>    <address>
+<deliveryPoint>Department of Biology, 24 Kincaid Hall, University of Washington</deliveryPoint><city>Seattle</city><administrativeArea>WA</administrativeArea><postalCode>98195-1800</postalCode><country>UNITED_STATES</country>    </address>
+<phone>(206) 543-7622</phone><electronicMailAddress>leache@uw.edu</electronicMailAddress><onlineUrl>http://faculty.washington.edu/leache/wordpress</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Jack</givenName>      <surName>Sites</surName>
+    </individualName>
+<organizationName>Monte L. Bean Life Science Museum</organizationName><positionName>Curator of Reptiles and Amphibians</positionName>    <address>
+<deliveryPoint>4029 LSB</deliveryPoint><city>Provo</city><administrativeArea>UT</administrativeArea><postalCode>84602</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 801-422-2279</phone><electronicMailAddress>Jack_Sites@byu.edu</electronicMailAddress><onlineUrl>http://mlbean.byu.edu/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Sven</givenName>      <surName>Kullander</surName>
+    </individualName>
+<organizationName>Swedish museum of natural history</organizationName><positionName>Senior Curator</positionName>    <address>
+<country>SWEDEN</country>    </address>
+<electronicMailAddress>sven.kullander@nrm.se</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Fernando</givenName>      <surName>Castro Herrera</surName>
+    </individualName>
+<organizationName>Universidad del Valle</organizationName><positionName>Curador de la colección</positionName>    <address>
+<deliveryPoint>Calle 13 # 100-00, Facultad de Ciencias Naturales y Exactas, sección Zoología (Espacio: 3114)</deliveryPoint><city>Cali</city><administrativeArea>Valle del Cauca</administrativeArea><country>COLOMBIA</country>    </address>
+<phone>+57 (2) 3212100</phone><electronicMailAddress>fernando.castro@correounivalle.edu.co</electronicMailAddress><onlineUrl>http://www.univalle.edu.co/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+<organizationName>The Natural History Museum, London</organizationName><electronicMailAddress>data@nhm.ac.uk</electronicMailAddress><onlineUrl>http://data.nhm.ac.uk</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Steven</givenName>      <surName>van der Mije</surName>
+    </individualName>
+<organizationName>Naturalis Biodiversity Center</organizationName><positionName>Head Vertebrate collections</positionName>    <address>
+<deliveryPoint>PO Box 9517</deliveryPoint><city>Leiden</city><administrativeArea>Zuid Holland</administrativeArea><postalCode>NL-2300 RA</postalCode><country>NETHERLANDS</country>    </address>
+<phone>+31.71.7519600</phone><electronicMailAddress>collectie@naturalis.nl</electronicMailAddress><onlineUrl>https://science.naturalis.nl/en/collection/naturalis-collections/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Herman</givenName>      <surName>Mays</surName>
+    </individualName>
+<organizationName>Cincinnati Museum Center</organizationName><positionName>Curator of Zoology</positionName>    <address>
+<deliveryPoint>1301 Western Avenue</deliveryPoint><city>Cincinnati</city><administrativeArea>Ohio</administrativeArea><postalCode>45203</postalCode><country>UNITED_STATES</country>    </address>
+<phone>513-455-7163</phone><electronicMailAddress>hmays@cincymuseum.org</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Julia</givenName>      <surName>Colby</surName>
+    </individualName>
+<organizationName>Milwaukee Public Museum</organizationName><positionName>Vertebrate &amp; Invertebrate Zoology Collections Manager</positionName>    <address>
+<deliveryPoint>800 West Wells</deliveryPoint><city>Milwaukee</city><administrativeArea>WI</administrativeArea><postalCode>53233</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 414-278-2760</phone><electronicMailAddress>colby@mpm.edu</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>George</givenName>      <surName>Bradley</surName>
+    </individualName>
+<organizationName>University of Arizona Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>Department of Ecology and Evolutionary Biology</deliveryPoint><city>Tucson</city><administrativeArea>AZ</administrativeArea><postalCode>85721</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+1 (520) 621-3187</phone><electronicMailAddress>gbradley@email.arizona.edu</electronicMailAddress><onlineUrl>http://www.eebweb.arizona.edu/Collections/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Brendan</givenName>      <surName>Haley</surName>
+    </individualName>
+<organizationName>Museum of Comparative Zoology</organizationName><positionName>Senior Database Manager</positionName>    <address>
+<deliveryPoint>26 Oxford Street</deliveryPoint><city>Cambridge</city><administrativeArea>MA</administrativeArea><postalCode>02138</postalCode><country>UNITED_STATES</country>    </address>
+<electronicMailAddress>bhaley@oeb.harvard.edu</electronicMailAddress>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Cameron</givenName>      <surName>Siler</surName>
+    </individualName>
+<organizationName>Sam Noble Oklahoma Museum of Natural History</organizationName><positionName>Curator</positionName>    <address>
+<deliveryPoint>2401 Chautauqua Ave.</deliveryPoint><city>Norman</city><administrativeArea>Oklahoma</administrativeArea><postalCode>73072</postalCode><country>UNITED_STATES</country>    </address>
+<phone>405-325-3718</phone><electronicMailAddress>camsiler@ou.edu</electronicMailAddress><onlineUrl>http://www.cameronsiler.com/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Stephen</givenName>      <surName>Rogers</surName>
+    </individualName>
+<organizationName>Carnegie Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>4400 Forbes Ave.</deliveryPoint><city>Pittsburg</city><administrativeArea>PA</administrativeArea><postalCode>15213-4080</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 412-622-3255</phone><electronicMailAddress>rogerss@carnegiemnh.org</electronicMailAddress><onlineUrl>http://www.carnegiemnh.org/herps/index.html</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Jens</givenName>      <surName>Vindum</surName>
+    </individualName>
+<organizationName>California Academy of Sciences</organizationName><positionName>Senior Collections Manager, Herpetology</positionName>    <address>
+<deliveryPoint>55 Music Concourse Dr.</deliveryPoint><city>San Francisco</city><administrativeArea>CA</administrativeArea><postalCode>94118</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+1 (415) 379-5292</phone><electronicMailAddress>jvindum@calacademy.org</electronicMailAddress><onlineUrl>https://www.calacademy.org/staff/ibss/herpetology/jens-vindum</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Laura</givenName>      <surName>Abraczinskas</surName>
+    </individualName>
+<organizationName>Michigan State University Museum</organizationName><positionName>Collections Manager</positionName>    <address>
+<deliveryPoint>409 West Circle Drive</deliveryPoint><city>East Lansing</city><administrativeArea>MI</administrativeArea><postalCode>48824</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 517-355-1290</phone><electronicMailAddress>abraczi1@msu.edu</electronicMailAddress><onlineUrl>http://museum.msu.edu/</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Scott</givenName>      <surName>Cutler</surName>
+    </individualName>
+<organizationName>Centennial Museum</organizationName><positionName>Curator of Collections &amp; Exhibits</positionName>    <address>
+<deliveryPoint>The University of Texas at El Paso</deliveryPoint><city>El Paso</city><administrativeArea>TX</administrativeArea><postalCode>79968-0533</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 915-747-6668</phone><electronicMailAddress>scutler@utep.edu</electronicMailAddress><onlineUrl>https://www.utep.edu/leb/collect/collect.htm</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Carol</givenName>      <surName>Spencer</surName>
+    </individualName>
+<organizationName>Museum of Vertebrate Zoology, UC Berkeley</organizationName><positionName>Staff Curator of Herpetology</positionName>    <address>
+<deliveryPoint>3101 Valley Life Science Building</deliveryPoint><city>Berkeley</city><administrativeArea>CA</administrativeArea><postalCode>94720-3160</postalCode><country>UNITED_STATES</country>    </address>
+<phone>(510) 643-5778</phone><electronicMailAddress>atrox@berkeley.edu</electronicMailAddress><onlineUrl>http://mvz.berkeley.edu</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>John</givenName>      <surName>Friel</surName>
+    </individualName>
+<organizationName>Cornell University Museum of Vertebrates</organizationName><positionName>Curator</positionName>    <address>
+<deliveryPoint>159 Sapsucker Woods Road</deliveryPoint><city>Ithaca</city><administrativeArea>NY</administrativeArea><postalCode>14850-1923</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+1 607-254-2162</phone><electronicMailAddress>john.friel@cornell.edu</electronicMailAddress><onlineUrl>http://www.cumv.cornell.edu</onlineUrl>    <role>CONTENT_PROVIDER</role>
+</associatedParty>
+<pubDate>
+        2016-05-21
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>A dataset containing all occurrences available in GBIF matching the query:
+TaxonKey: Anolis Daudin, 1802 
+Country: Puerto Rico
+The dataset includes records from the following constituent datasets. The full metadata for each constituent is also included in this archive:
+1 records from UCM Amphibian and Reptile Collection (Arctos)
+1 records from NRM-Herpetology
+2 records from PSM Vertebrates Collection
+3 records from Naturalis Biodiversity Center (NL) - Aves
+3 records from Naturalis Biodiversity Center (NL) - Cainozoic Mollusca
+3 records from Naturalis Biodiversity Center (NL) - Chelicerata and Myriapoda
+3 records from Naturalis Biodiversity Center (NL) - Amphibia and Reptilia
+3 records from SysTax -  Zoological Collections
+3 records from MSUM Ichthyology and Herpetology Collections
+3 records from CUMV Reptile Collection (Arctos)
+4 records from Zoological Museum Amsterdam, University of Amsterdam (NL) – Herpetology
+4 records from Collection Herpetology SMF
+4 records from Amphibians and Reptiles collection at the Natural History Museum of Denmark (SNM)
+11 records from Herps Specimens
+12 records from Natural History Museum (London) Collection Specimens
+13 records from MPM Herpetology
+17 records from UAZ Herpetology Collection
+18 records from Colección de anfibios y reptiles del Laboratorio de Herpetología de la Universidad del Valle (UV-C)
+21 records from Biodiversity Research and Teaching Collections - TCWC Vertebrates
+22 records from iNaturalist Research-grade Observations
+22 records from Herps Specimens
+23 records from CMC_herpetology_vouchers
+25 records from Arizona State University Amphibian and Reptile Collection
+31 records from UTEP Vertebrates
+34 records from Vertebrate Zoology Division - Herpetology, Yale Peabody Museum
+38 records from BYU Herpetology Collection
+42 records from Herpetology
+48 records from TNHC Herpetology Collection
+51 records from SDNHM Herpetology Collection
+52 records from Herp specimens
+57 records from LSUMZ Herp Tissues
+57 records from Reptile Specimens
+88 records from CM Herps Collection
+114 records from CAS Herpetology (HERP)
+262 records from LACM Vertebrate Collection
+342 records from UMMZ Herpetology Collection
+352 records from Herpetology Collection - Royal Ontario Museum
+541 records from UWBM Herpetology Collection (Arctos)
+556 records from NMNH occurrence DwC-A
+579 records from Field Museum of Natural History (Zoology) Amphibian and Reptile Collection
+788 records from AMNH Herpetology Collections
+1016 records from KUBI Herpetology Collection
+4047 records from MVZ Herp Collection (Arctos)
+6666 records from Museum of Comparative Zoology, Harvard University
+</para>
+</abstract>
+  <intellectualRights>
+    <para>The data included in this download are provided to the user under a Creative Commons BY-NC 4.0 license (http://creativecommons.org/licenses/by-nc/4.0) which means that you are free to use, share, and adapt the data provided that you give reasonable and appropriate credit (attribution) and that you do not use the material for commercial purposes (non-commercial).
+
+Data from some individual datasets included in this download may be licensed under less restrictive terms; review the details below.</para>
+  </intellectualRights>
+  <contact>
+    <individualName>
+      <surName>GBIF Download Service</surName>
+    </individualName>
+<electronicMailAddress>support@gbif.org</electronicMailAddress>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <citation identifier="10.15468/dl.kwznhp">GBIF Occurrence Download 10.15468/dl.kwznhp</citation>
+        <physical>
+          <objectName></objectName>
+          <characterEncoding>UTF-8</characterEncoding>
+          <dataFormat>
+            <externallyDefinedFormat>
+              <formatName>Darwin Core Archive</formatName>
+            </externallyDefinedFormat>
+          </dataFormat>
+          <distribution>
+            <online>
+              <url function="download">http://api.gbif.org/v1/occurrence/download/request/0004665-160509122628363.zip</url>
+            </online>
+          </distribution>
+        </physical>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

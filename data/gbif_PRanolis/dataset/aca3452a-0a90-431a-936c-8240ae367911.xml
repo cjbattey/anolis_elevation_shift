@@ -1,0 +1,363 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="aca3452a-0a90-431a-936c-8240ae367911"  system="http://gbif.org" scope="system"
+         xml:lang="es">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/3gcjmz</alternateIdentifier>
+    <alternateIdentifier>http://data.biodiversidad.co/valle/resource.do?r=herpetosgorgona</alternateIdentifier>
+    <alternateIdentifier>http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona</alternateIdentifier>
+    <alternateIdentifier>aca3452a-0a90-431a-936c-8240ae367911</alternateIdentifier>
+    <alternateIdentifier>14704</alternateIdentifier>
+  <title>Colección de anfibios y reptiles del Laboratorio de Herpetología de la Universidad del Valle (UV-C)</title>
+<creator>
+    <individualName>
+<givenName>Samuel</givenName>      <surName>Salinas</surName>
+    </individualName>
+<organizationName>Universidad del Valle</organizationName><positionName>Monitor</positionName>    <address>
+<deliveryPoint>Calle 13 # 100-00, Facultad de Ciencias Naturales y Exactas, sección Zoología (Espacio: 3114)</deliveryPoint><city>Cali</city><administrativeArea>Valle del Cauca</administrativeArea><country>COLOMBIA</country>    </address>
+<phone>+57 (2) 3212100</phone><electronicMailAddress>samuel.salinas@correounivalle.edu.co</electronicMailAddress><onlineUrl>http://www.univalle.edu.co/</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Anyelet</givenName>      <surName>Valencia Aguilar</surName>
+    </individualName>
+<organizationName>Universidad del Valle</organizationName><positionName>Bióloga</positionName>    <address>
+<deliveryPoint>Calle 13 # 100-00, sede Melendez, Facultad de Ciencias (Edificio: 320), Sección Zoología (Espacio: 3114)</deliveryPoint><city>Cali</city><administrativeArea>Valle del Cauca</administrativeArea><country>COLOMBIA</country>    </address>
+<phone>+57 23212100</phone><electronicMailAddress>anyelet@gmail.com</electronicMailAddress><onlineUrl>http://www.univalle.edu.co/</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Edgardo</givenName>      <surName>Londoño</surName>
+    </individualName>
+<organizationName>Universidad del Valle</organizationName><positionName>Jefe del departamento de Biología</positionName>    <address>
+<deliveryPoint>Calle 13 # 100 - 00, Facultad de Ciencias Naturales y Exactas</deliveryPoint><city>Cali</city><administrativeArea>Valle del Cauca</administrativeArea><country>COLOMBIA</country>    </address>
+<phone>+57 (2) 3212100 Ext 2170 -  2497</phone><electronicMailAddress>edgardo.londono@correounivalle.edu.co</electronicMailAddress><onlineUrl>http://www.univalle.edu.co/</onlineUrl>    <role>CUSTODIAN_STEWARD</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Eliana</givenName>      <surName>Garzón Romero</surName>
+    </individualName>
+<organizationName>Universidad del Valle</organizationName><positionName>Bióloga</positionName>    <address>
+<deliveryPoint>Calle 13 # 100 - 00, Facultad de Ciencias Naturales y Exactas</deliveryPoint><city>Cali</city><administrativeArea>Valle del Cauca</administrativeArea><country>COLOMBIA</country>    </address>
+<phone>+57 (2) 3212100 ext 2570</phone><electronicMailAddress>eliana.garzon@correounivalle.edu.co</electronicMailAddress><onlineUrl>http://www.univalle.edu.co/</onlineUrl>    <role>PUBLISHER</role>
+</associatedParty>
+<pubDate>
+        2015-12-09
+</pubDate>
+<language>SPANISH</language>
+<abstract>
+  <para>La colección de anfibios y reptiles de la Universidad del Valle es de carácter científico y su función es generar, organizar y difundir información referente a la herpetofauna, con énfasis en el sur occidente colombiano, aunque tiene ejemplares de gran parte del territorio.  La colección nace de actividades académicas del curso especializado en Herpetología en 1990, con el propósito de generar información y actualización del conocimiento de la diversidad biológica de anfibios y reptiles del Valle del Cauca.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Diversidad biológica</keyword>
+      <keywordThesaurus>http://databases.unesco.org/thessp/</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Reptiles</keyword>
+      <keyword>Taxonomía</keyword>
+      <keyword>Anfibios</keyword>
+      <keywordThesaurus>http://www.cabi.org/cabthesaurus/</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <additionalInfo>
+    <para>Creditos del conjunto de datos al Instituto de Investigación de Recursos Biológicos Alexander Von Humboldt, Universidad del Valle, Laboratorio de Herpetología de la Universida del Valle.</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>Este trabajo está licenciado bajo una licencia Creative Commons Zero (CC0) 1.0  http://creativecommons.org/publicdomain/zero/1.0/legalcode</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Los registros de anfibios y reptiles provienen de ocho departamentos del territorio colombiano, Amazonas (22 registros), Antioquia	(109), Arauca	(40), Archipiélago de San Andrés, Providencia y Santa Catalina	(1), Atlántico	(11), Bolívar (3), Caldas (1) y Valle del Cauca (6476).</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-81.601</westBoundingCoordinate>
+          <eastBoundingCoordinate>-69.722</eastBoundingCoordinate>
+          <northBoundingCoordinate>12.546</northBoundingCoordinate>
+          <southBoundingCoordinate>-3.603</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+          <rangeOfDates>
+            <beginDate>
+              <calendarDate>        1950-01-01
+</calendarDate>
+            </beginDate>
+            <endDate>
+              <calendarDate>        2013-11-25
+</calendarDate>
+            </endDate>
+          </rangeOfDates>
+      </temporalCoverage>
+        <taxonomicCoverage>
+            <generalTaxonomicCoverage>Dentro de la colección UV-C se reportan dos clases; Amphibia con 5222 registros y Reptilia con 1441.
+ 
+Para Amphibia, se tienen tres ordenes, Anura (4798 registros, los cuales pertenecen a 12 familias), Caudata (386, con 1 familia) y Gymnophiona (38 registros con 2 familias).</generalTaxonomicCoverage>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Amphibia</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Anura</taxonRankValue>
+                <commonName>Ranas</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Aromobatidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Bufonidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Centrolenidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Craugastoridae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Dendrobatidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Eleutherodactylidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Hemiphractidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Hylidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Leptodactylidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Microhylidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Ranidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Strabomantidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Caudata</taxonRankValue>
+                <commonName>Salamandras</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Plethodontidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Gymnophiona</taxonRankValue>
+                <commonName>Cecilias</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Caeciliidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Rhinatrematidae</taxonRankValue>
+            </taxonomicClassification>
+        </taxonomicCoverage>
+        <taxonomicCoverage>
+            <generalTaxonomicCoverage>Para Reptilia, se tiene un solo orden, Squamata con los mismos 1441 registros, los cuales pertenecen a 20 familias.</generalTaxonomicCoverage>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Reptilia</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Squamata</taxonRankValue>
+                <commonName>Reptiles</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Anomalepidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Boidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Colubridae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Corytophanidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Dactyloidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Diploglossidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Dipsadidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Elapidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Gekkonidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Gymnophthalmidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Hoplocercidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Iguanidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Leptotyphlopidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Phyllodactylidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Polychrotidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Scincidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Sphaerodactylidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Teiidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Tropidophiidae</taxonRankValue>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Family</taxonRankName>
+              <taxonRankValue>Viperidae</taxonRankValue>
+            </taxonomicClassification>
+        </taxonomicCoverage>
+  </coverage>
+  <purpose>
+    <para>El estudio de la herpectofauna es muy importante, pues al cavo de los años se  ha registrado la perdida de poblaciones tanto de anfibios como de reptiles, lo que ha llevado a realizar estudios para conocer los factores que provocan este fenómeno. Ademas,  los venenos y tóxicos que generan algunos de ellos son utilizados para beneficio del hombre.</para>
+  </purpose>
+  <contact>
+    <individualName>
+<givenName>Fernando</givenName>      <surName>Castro Herrera</surName>
+    </individualName>
+<organizationName>Universidad del Valle</organizationName><positionName>Curador de la colección</positionName>    <address>
+<deliveryPoint>Calle 13 # 100-00, Facultad de Ciencias Naturales y Exactas, sección Zoología (Espacio: 3114)</deliveryPoint><city>Cali</city><administrativeArea>Valle del Cauca</administrativeArea><country>COLOMBIA</country>    </address>
+<phone>+57 (2) 3212100</phone><electronicMailAddress>fernando.castro@correounivalle.edu.co</electronicMailAddress><onlineUrl>http://www.univalle.edu.co/</onlineUrl>  </contact>
+  <methods>
+      <methodStep>
+        <description>
+          <para>1. CAPTURA Y OBSERVACIÓN DIRECTA
+Consiste en atrapar u observar el animal con o sin ayuda de herramientas, se puede detectar el animal aun sin ser visto, por medio de sus cantos o de sus huellas. 
+a. Búsqueda por recorridos, mediante registro visual: consiste en desplazarse por un área determinada o tipo de hábitat registrando todos los herpetos observados. Se realiza escogiendo el área, midiendo su ancho su largo y así mismo el tiempo estipulado para la colecta. 
+b. Búsqueda en micro-hábitat: se utiliza para colectar y registrar datos sobre la abundancia de unas pocas especies, consiste en buscar en los hábitat más conocidos de los anfibios y los reptiles, alzando restos vegetales, debajo de las rocas, restos de troncos, cuevas y otros. 
+c. Se utilizan ganchos de diversas formas y tamaños especialmente para atrapar serpientes y evitar el riesgo de mordedura. Para manipular una serpiente primero se inmoviliza la cabeza con un gancho herpetológico en un lugar firme, luego se procede a tomar la parte posterior de la cabeza con los dedos pulgar y medio, colocando al mismo tiempo el dedo indice en la parte superior y con la otra mano se sujeta el cuerpo.
+
+2. CAPTURA Y OBSERVACIÓN INDIRECTA
+La captura y observación indirecta trata del uso de equipos que atrapan a los animales sin presencia del investigador. Entre estas formas encontramos:
+a. Trampas de embudo o nasas de agua, consisten en una malla o varias, soportadas por anillos haciendo la forma de un embudo, se utiliza frecuentemente en aguas para atrapar anfibios y reptiles acuáticos o semi-acuáticos, pero también se utiliza en suelos libre de agua.
+b. Trampas de pozo, consiste en enterrar baldes a cierta profundidad, pueden ponerse de forma individual o grupal y jugar con la ubicación de forma geométrica y que favorezca el objetivo, en algunas ocasiones se ponen mallas que sirvan como barrera para acorralar a los animales y que caigan en la trampa.</para>
+        </description>
+      </methodStep>
+      <sampling>
+        <studyExtent>
+          <description>
+            <para>Los especímenes registrados provienen de diversas zonas del país, incluyendo  los Andes y en particular el pacífico colombiano, donde se incluyen las zonas de vida como bosque seco tropical, bosque húmedo, planicies, pasturas, entre otros.</para>
+          </description>
+        </studyExtent>
+        <samplingDescription>
+          <para>Existen dos métodos de muestreo básicos para capturar o registrar la presencia de anfibios y/o reptiles: Está la  captura y observación directa y la captura y observación indirecta; se debe tener en cuenta antes de realizar los métodos de captura, la época, el clima,  los cambios de luna, el lugar, etc.</para>
+        </samplingDescription>
+      </sampling>
+      <qualityControl>
+        <description>
+          <para>Para confirmar los nombres científicos se utilizó la base de datos de Catalog of Life (http://www. catalogueoflife.org/) y American Museum of Natural History (http://www.amnh.org/our-research/staff-directory/darrel-frost). Los departamentos, municipios y centros poblados colombianos fueron codificados teniendo en cuenta la clasificación de la división político-administrativa de Colombia -Divipola- del DANE (listado actualizado al 31 de marzo de 2015) y los países el estándar ISO 3166-1. La base de datos, como tal, se le realizó un control de calidad con el programa OpenRefine.</para>
+        </description>
+      </qualityControl>
+  </methods>
+
+    <project>
+      <title>COLECCIÓN DE ANFIBIOS Y REPTILES DEL LABORATORIO DE HERPETOLOGÍA DE LA UNIVERSIDAD DEL VALLE (UV-C)</title>
+      <personnel>
+    <individualName>
+<givenName>Fernando</givenName>      <surName>Castro Herrera</surName>
+    </individualName>
+    <role>POINT_OF_CONTACT</role>
+      </personnel>
+      <funding>
+        <para>Convenio de Cooperación No. 13-13-014-242ce entre el Instituto de Investigación de Recursos Biológicos Alexander von Humboldt y la Universidad del Valle.</para>
+      </funding>
+      <designDescription>
+        <description>
+          <para>En el desarrollo del convenio se creó la base digital de los datos de la colección de Herpetología (UV-C) de la Universidad del Valle. se digitalizaron, se estandarizaron y georreferenciaron las localidades asociadas a un total de 6.663 registros. Además se publicaron los mismos en el portal del SiB-Colombia.</para>
+        </description>
+      </designDescription>
+    </project>
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2015-12-09T03:34:57.055+01:00</dateStamp>
+        <citation identifier="http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona">Colección de Herpetología de la Universidad del Valle (2011 - ). Colección de anfibios y reptiles del Laboratorio de Herpetología de la Universidad del Valle (UV-C), 6.663 registros, aportados por Castro-Herrera, F. (curador de la colección, contacto del recurso), Salinas, S. (creador del recurso), Valencia-Aguilar, A. (bióloga), Garzon Romero, E. (publicador), Londoño, E. (custodio de los datos).  En linea, http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona, Versión 12.0 (actualizado el 03/06/2015).</citation>
+        <resourceLogoUrl>http://ipt.sibcolombia.net/valle/logo.do?r=herpetosgorgona</resourceLogoUrl>
+        <collection>
+          <parentCollectionIdentifier>UV</parentCollectionIdentifier>
+          <collectionIdentifier>Registro Nacional de Colecciones: 081</collectionIdentifier>
+          <collectionName>Colección del Laboratorio de Herpetología de la Universidad del Valle</collectionName>
+        </collection>
+        <specimenPreservationMethod>ALCOHOL</specimenPreservationMethod>
+            <jgtiCuratorialUnit>
+                <jgtiUnitType>Animal Completo (ETOH)</jgtiUnitType>
+                <jgtiUnitRange>
+                    <beginRange>6,660</beginRange>
+                    <endRange>6,663</endRange>
+                </jgtiUnitRange>
+            </jgtiCuratorialUnit>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

@@ -1,0 +1,144 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="81a975b3-d86f-434e-ad9e-16bc43f68a36"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/jahr84</alternateIdentifier>
+    <alternateIdentifier>13711</alternateIdentifier>
+  <title>CMC_herpetology_vouchers</title>
+<creator>
+    <individualName>
+<givenName>Herman</givenName>      <surName>Mays</surName>
+    </individualName>
+<organizationName>Cincinnati Museum Center</organizationName><positionName>Curator of Zoology</positionName>    <address>
+<deliveryPoint>1301 Western Avenue</deliveryPoint><city>Cincinnati</city><administrativeArea>Ohio</administrativeArea><postalCode>45203</postalCode><country>UNITED_STATES</country>    </address>
+<phone>513-455-7163</phone><electronicMailAddress>hmays@cincymuseum.org</electronicMailAddress></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Herman</givenName>      <surName>Mays</surName>
+    </individualName>
+<organizationName>Cincinnati Museum Center</organizationName><positionName>Curator of Zoology</positionName>    <address>
+<deliveryPoint>1301 Western Avenue</deliveryPoint><city>Cincinnati</city><administrativeArea>Ohio</administrativeArea><postalCode>45203</postalCode><country>UNITED_STATES</country>    </address>
+<phone>513-455-7163</phone><electronicMailAddress>hmays@cincymuseum.org</electronicMailAddress></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Herman</givenName>      <surName>Mays</surName>
+    </individualName>
+<organizationName>Cincinnati Museum Center</organizationName><positionName>Curator of Zoology</positionName>    <address>
+<deliveryPoint>1301 Western Avenue</deliveryPoint><city>Cincinnati</city><administrativeArea>Ohio</administrativeArea><postalCode>45203</postalCode><country>UNITED_STATES</country>    </address>
+<phone>513-455-7163</phone><electronicMailAddress>hmays@cincymuseum.org</electronicMailAddress>    <role>CUSTODIAN_STEWARD</role>
+</associatedParty>
+<pubDate>
+        2011-11-22
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>Specimen voucher collection for Cincinnati Museum Center&apos;s Museum of Natural History and Science&apos;s Herpetology Collection.</para>
+</abstract>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Global</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+          <rangeOfDates>
+            <beginDate>
+              <calendarDate>        1899-05-01
+</calendarDate>
+            </beginDate>
+            <endDate>
+              <calendarDate>        2011-11-22
+</calendarDate>
+            </endDate>
+          </rangeOfDates>
+      </temporalCoverage>
+        <taxonomicCoverage>
+            <generalTaxonomicCoverage>Taxonomically broad collection covering most major groups of reptiles and amphibians.</generalTaxonomicCoverage>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Amphibia</taxonRankValue>
+                <commonName>Amphibians</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Reptilia</taxonRankValue>
+                <commonName>Reptiles</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Testudines</taxonRankValue>
+                <commonName>Turtles</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Crocodylia</taxonRankValue>
+                <commonName>Crocodilians</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Squamata</taxonRankValue>
+                <commonName>Lizards and snakes</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Anura</taxonRankValue>
+                <commonName>Frogs</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Caudata</taxonRankValue>
+                <commonName>Salamanders</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Order</taxonRankName>
+              <taxonRankValue>Gymnophiona</taxonRankValue>
+                <commonName>Caecilians</commonName>
+            </taxonomicClassification>
+        </taxonomicCoverage>
+  </coverage>
+  <contact>
+    <individualName>
+<givenName>Herman</givenName>      <surName>Mays</surName>
+    </individualName>
+<organizationName>Cincinnati Museum Center</organizationName><positionName>Curator of Zoology</positionName>    <address>
+<deliveryPoint>1301 Western Avenue</deliveryPoint><city>Cincinnati</city><administrativeArea>Ohio</administrativeArea><postalCode>45203</postalCode><country>UNITED_STATES</country>    </address>
+<phone>513-455-7163</phone><electronicMailAddress>hmays@cincymuseum.org</electronicMailAddress>  </contact>
+
+    <project>
+      <title>Curator of Zoology</title>
+      <personnel>
+    <individualName>
+<givenName>Herman</givenName>      <surName>Mays</surName>
+    </individualName>
+    <role>CUSTODIAN_STEWARD</role>
+      </personnel>
+      <funding>
+        <para></para>
+      </funding>
+    </project>
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2015-05-13T11:55:42.614+02:00</dateStamp>
+        <citation>Cincinnati Museum Center: CMC_herpetology_vouchers</citation>
+        <resourceLogoUrl>http://www.cincymuseum.org/z-resources/_img/logo.png</resourceLogoUrl>
+        <collection>
+          <parentCollectionIdentifier>CMC Zoology Collection</parentCollectionIdentifier>
+          <collectionIdentifier>HERP-V</collectionIdentifier>
+          <collectionName>CMC Herpetology Specimen Voucher Collection</collectionName>
+        </collection>
+        <specimenPreservationMethod>ALCOHOL</specimenPreservationMethod>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

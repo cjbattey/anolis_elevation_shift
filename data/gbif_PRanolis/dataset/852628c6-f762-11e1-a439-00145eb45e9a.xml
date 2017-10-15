@@ -1,0 +1,138 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="852628c6-f762-11e1-a439-00145eb45e9a"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/xrorih</alternateIdentifier>
+    <alternateIdentifier>http://ipt.vertnet.org:8080/ipt/resource.do?r=tnhc_herps</alternateIdentifier>
+    <alternateIdentifier>852628c6-f762-11e1-a439-00145eb45e9a</alternateIdentifier>
+    <alternateIdentifier>919</alternateIdentifier>
+  <title>TNHC Herpetology Collection</title>
+<creator>
+    <individualName>
+<givenName>David</givenName>      <surName>Cannatella</surName>
+    </individualName>
+<organizationName>Texas Natural History Collections</organizationName><positionName>Curator</positionName>    <address>
+<deliveryPoint>10100 Burnet RD, PRC 176/R4000</deliveryPoint><city>Austin</city><administrativeArea>TX</administrativeArea><postalCode>78758-4445</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 512-232-4862</phone><electronicMailAddress>catfish@austin.utexas.edu</electronicMailAddress><onlineUrl>http://www.utexas.edu/tmm/tnhc/</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Travis</givenName>      <surName>LaDuc</surName>
+    </individualName>
+<organizationName>Texas Natural History Collections</organizationName><positionName>Assistant Curator</positionName>    <address>
+<deliveryPoint>10100 Burnet RD, PRC 176/R4000</deliveryPoint><city>Austin</city><administrativeArea>TX</administrativeArea><postalCode>78758-4445</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 512-475-6339</phone><electronicMailAddress>travieso@austin.utexas.edu</electronicMailAddress><onlineUrl>http://www.utexas.edu/tmm/tnhc/</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>John</givenName>      <surName>Wieczorek</surName>
+    </individualName>
+<organizationName>Museum of Vertebrate Zoology at UC Berkeley</organizationName><positionName>Information Architect</positionName><electronicMailAddress>tuco@berkeley.edu</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>David</givenName>      <surName>Bloom</surName>
+    </individualName>
+<organizationName>Coordinator</organizationName><positionName>VertNet</positionName><electronicMailAddress>dbloom@vertnet.org</electronicMailAddress><onlineUrl>http://www.vertnet.org</onlineUrl>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Laura</givenName>      <surName>Russell</surName>
+    </individualName>
+<organizationName>VertNet</organizationName><positionName>VertNet Programmer</positionName><phone>+01 785 813-1496</phone><electronicMailAddress>larussell@vertnet.org</electronicMailAddress><onlineUrl>http://www.vertnet.org</onlineUrl>    <role>PROGRAMMER</role>
+</associatedParty>
+<pubDate>
+        2015-04-15
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>The Herpetology Division and its collection of amphibians and reptiles is one of the research units of the Texas Natural History Collections (TNHC) in the Texas Natural Science Center (TNSC) at The University of Texas at Austin. The collection consists of 85,000 cataloged specimens, including skeletons and larvae.  The collection contains 2061 species from 808 genera (95 families).  It is one of the largest regional collections in the southwestern United States, and also has significant holdings from Mexico, Central America, South America, Africa, and Southeast Asia. The collection is particularly strong in frogs; for example, the worldwide representation of toads (Bufo) compares favorably with collections such as the Smithsonian Institution.  For its size, the collection is also very strong in phrynosomatid lizards and hemidactyline salamanders.
+
+The TNHC is modestly comprehensive, incorporating all major groups of amphibians and reptiles but lacking numerous families (non North-American taxa).  The major strengths of the collection to date fall into five categories: 1) extensive series from certain parts of the U.S. (e.g., Pseudacris, hemidactyline salamanders), 2) substantial worldwide collections of the genus Bufo, 3) certain historically important and likely irreplaceable specimens (e.g., Blanco Blind Salamander [Eurycea robusta]), 4) deep and dense chronological representation, especially from central Texas and the Texas Panhandle, and 5) over 650 open reel analog tap recordings of frog calls recorded in the field between 1950 and 1983 from various locations around the world.  
+
+Our Texas holdings comprise 56% of the total collection, from 247 of the 254 Texas counties.  We have holdings from 47 other U.S. states (only missing specimens from Maine and Rhode Island) as well as Guam, Puerto Rico, and the U. S. Virgin Islands.  Worldwide, we have herpetological holdings from 85 additional countries, including substantial collections from Central and South America, Africa, and Southeast Asia.  Holdings of extinct or extirpated species include Bufo periglenes and specimens of Opheodrys vernalis collected from Texas populations.  Thirty-seven species in the TNHC are stated listed as threatened or endangered, and 18 are federally listed as threatened or endangered.
+
+The skeletal collection consists of both dry, and cleared &amp; stained skeletal preparations.  There are just under 1000 dry skeletal specimens (mostly Bufonidae) and over 1200 cleared and stained specimens.
+
+The earliest cataloged herpetology specimens date from 1939 (specimens received in exchange from the University of Florida), with a handful of specimens collected in the early to mid 1940’s.  Initial collection growth coincided with the large-scale trips organized by Blair between 1949-1955 to west Texas and the Panhandle, as well as many local and regional (particularly east Texas) collecting trips by Blair and his students; Blair was hired in 1946, became Professor in 1955 and Emeritus Professor in 1982, passing away on 09 February 1984.  Large and consistent growth to the collections continued through the mid 1970’s through the work of by Blair and his large number of students.  Blair’s contributions to science include five books (three with sole authorship), 148 papers (119 had sole authorship), supervised 100 Dissertations and Theses.   Collection growth waned for a decade but again increased following the hiring of a curator of herpetology, David Cannatella, in 1990. 
+
+In 2000, the TNHC received 18,000 specimens from the TTU herpetology collection, representing the largest collection of herpetological specimens from the Texas Panhandle.  Although this was the single largest separate herpetology collection accessioned by the TNHC, other smaller collections have been acquired, including a collection of 199 specimens from Dr. Norman Richard of Brownsville TX and 890 specimens donated by Dr. Thomas Scanlon, formerly at the University of Missouri-Columbia.  
+
+The collection contains 496 type specimens (18 primary and 478 secondary) of 37 taxa.  All types are stored in 70% non-denatured ethanol, save two prepared as dry skeletons and seven prepared as cleared and stained specimens.
+
+Curators Cannatella and LaDuc and UT graduate students continue to add important material to the collections, most recently from the U.S., Southeast Asia, and Central and South America.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <intellectualRights>
+    <para>http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://www.utexas.edu/tmm/tnhc/herps/index.html</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>The geographic coverage of the herpetology collection is world-wide. About 69% of the specimens are from the U.S., mostly Texas (84%) and the Southwest. But there is important material from the New World tropics (Mexico, Central and South America, 15%), tropical Africa (8%) and Southeast Asia (9%).</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+          <rangeOfDates>
+            <beginDate>
+              <calendarDate>        1939-01-01
+</calendarDate>
+            </beginDate>
+            <endDate>
+              <calendarDate>        2013-01-01
+</calendarDate>
+            </endDate>
+          </rangeOfDates>
+      </temporalCoverage>
+        <taxonomicCoverage>
+            <generalTaxonomicCoverage>Most of the catalogued specimens are frogs (56%). Lizards make up 23%, and snakes another 12%. Salamanders are 7%, and turtles are only 2%; neither of these groups has many species worldwide. Caecilians, crocodilians, tuataras, and amphisbaenians are each represented by less than 0.1%</generalTaxonomicCoverage>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Amphibia</taxonRankValue>
+                <commonName>amphibians</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Reptilia</taxonRankValue>
+                <commonName>reptiles</commonName>
+            </taxonomicClassification>
+        </taxonomicCoverage>
+  </coverage>
+  <contact>
+    <individualName>
+<givenName>Travis</givenName>      <surName>LaDuc</surName>
+    </individualName>
+<organizationName>Texas Natural History Collections</organizationName><positionName>Assistant Curator</positionName>    <address>
+<deliveryPoint>10100 Burnet RD, PRC 176/R4000</deliveryPoint><city>Austin</city><administrativeArea>TX</administrativeArea><postalCode>78758-4445</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 512-475-6339</phone><electronicMailAddress>travieso@austin.utexas.edu</electronicMailAddress><onlineUrl>http://www.utexas.edu/tmm/tnhc/</onlineUrl>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2015-07-29T02:59:45.838+02:00</dateStamp>
+        <citation>TNHC Herpetology Collection</citation>
+        <resourceLogoUrl>http://ipt.vertnet.org:8080/ipt/logo.do?r=tnhc_herps</resourceLogoUrl>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

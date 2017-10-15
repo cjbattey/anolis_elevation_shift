@@ -1,0 +1,81 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="cece4fc2-1fec-4bb5-a335-7252548e3f0b"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/bvoyqy</alternateIdentifier>
+    <alternateIdentifier>http://ipt.calacademy.org:8080/ipt/resource?r=herp</alternateIdentifier>
+    <alternateIdentifier>http://ipt.calacademy.org:8080/ipt/resource.do?r=herp</alternateIdentifier>
+    <alternateIdentifier>cece4fc2-1fec-4bb5-a335-7252548e3f0b</alternateIdentifier>
+    <alternateIdentifier>14129</alternateIdentifier>
+  <title>CAS Herpetology (HERP)</title>
+<creator>
+    <individualName>
+<givenName>Stanley</givenName>      <surName>Blum</surName>
+    </individualName>
+<organizationName>California Academy of Sciences</organizationName><positionName>Research Information Manager</positionName>    <address>
+<deliveryPoint>55 Music Concourse Dr.</deliveryPoint><city>San Francisco</city><administrativeArea>CA</administrativeArea><postalCode>94118</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+1 (415) 379-5189</phone><electronicMailAddress>sblum@calacademy.org</electronicMailAddress></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Jon</givenName>      <surName>Fong</surName>
+    </individualName>
+<organizationName>California Academy of Sciences</organizationName><positionName>Programmer</positionName>    <address>
+<deliveryPoint>55 Music Concourse Dr.</deliveryPoint><city>San Francisco</city><administrativeArea>CA</administrativeArea><postalCode>94118</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+1 (415) 379-5280</phone><electronicMailAddress>jfong@calacademy.org</electronicMailAddress></metadataProvider>
+<pubDate>
+        2016-04-28
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>The electronic catalog of the herpotology collection at the California Academy of Sciences, San Francisco.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <intellectualRights>
+    <para>Public Domain (CC0 1.0)</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://www.calacademy.org/scientists/herpetology-collection</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Global coverage</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+  </coverage>
+  <contact>
+    <individualName>
+<givenName>Jens</givenName>      <surName>Vindum</surName>
+    </individualName>
+<organizationName>California Academy of Sciences</organizationName><positionName>Senior Collections Manager, Herpetology</positionName>    <address>
+<deliveryPoint>55 Music Concourse Dr.</deliveryPoint><city>San Francisco</city><administrativeArea>CA</administrativeArea><postalCode>94118</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+1 (415) 379-5292</phone><electronicMailAddress>jvindum@calacademy.org</electronicMailAddress><onlineUrl>https://www.calacademy.org/staff/ibss/herpetology/jens-vindum</onlineUrl>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-04-28T10:10:11.186+02:00</dateStamp>
+        <citation>California Academy of Sciences: CAS Herpetology (HERP)</citation>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

@@ -1,0 +1,91 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="dce00a1f-f6b4-4e11-9771-92c62c40ad80"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/ubdwdc</alternateIdentifier>
+    <alternateIdentifier>http://ipt.nhm.ku.edu/ipt/resource.do?r=kubi_herps</alternateIdentifier>
+    <alternateIdentifier>dce00a1f-f6b4-4e11-9771-92c62c40ad80</alternateIdentifier>
+    <alternateIdentifier>14487</alternateIdentifier>
+  <title>KUBI Herpetology Collection</title>
+<creator>
+    <individualName>
+<givenName>Rafe</givenName>      <surName>Brown</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>Curator-in-Charge of Herpetology</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 785-864-3403</phone><electronicMailAddress>rafe@ku.edu</electronicMailAddress><onlineUrl>http://herpetology.biodiversity.ku.edu/</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Rafe</givenName>      <surName>Brown</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>Curator-in-Charge of Herpetology</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 785-864-3403</phone><electronicMailAddress>rafe@ku.edu</electronicMailAddress><onlineUrl>http://herpetology.biodiversity.ku.edu/</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Richard</givenName>      <surName>Glor</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>Curator of Herpetology</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<electronicMailAddress>glor@ku.edu</electronicMailAddress><onlineUrl>http://herpetology.biodiversity.ku.edu/</onlineUrl>    <role>ADMINISTRATIVE_POINT_OF_CONTACT</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Linda</givenName>      <surName>Trueb</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>Curator of Herpetology</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 785-864-1204</phone><electronicMailAddress>trueb@ku.edu</electronicMailAddress><onlineUrl>http://herpetology.biodiversity.ku.edu/</onlineUrl>    <role>ADMINISTRATIVE_POINT_OF_CONTACT</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Laura</givenName>      <surName>Russell</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>VertNet Programmer</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<electronicMailAddress>larussell@ku.edu</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<pubDate>
+        2016-03-28
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>KU herpetology houses one of largest herpetology collections in the world (340,000 specimens representing more than 5000 species from 156 countries). The KU collections include the world’s largest collection of neotropical amphibian and reptile specimens (200,000+) as well as substantial numbers of Nearctic (80,000+) and Asian (20,000+) specimens. KU holdings are particularly strong for the U.S., Ecuador, Mexico, the Dominican Republic, Costa, Rica, Haiti, the Philippines, Peru and Panama. The collection from Kansas is the state’s largest (20,000+). The type collection includes nearly 400 primary types, mostly amphibians. KU Herpetology also maintains 5000 cleared-and-stained osteological preparations, nearly 5000 dried skeletons, and one of the world’s largest collections of amphibian larvae (6000+ lots). The KU digital archive includes more than 12,000 digital images and more than 1500 acoustic recordings.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <additionalInfo>
+    <para>Additional information for data from the Philippines are available upon request.</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>http://creativecommons.org/licenses/by/4.0/deed.en_US and http://biodiversity.ku.edu/research/university-kansas-biodiversity-institute-data-publication-and-use-norms</para>
+  </intellectualRights>
+  <contact>
+    <individualName>
+<givenName>Rafe</givenName>      <surName>Brown</surName>
+    </individualName>
+<organizationName>KU Biodiversity Institute</organizationName><positionName>Curator-in-Charge of Herpetology</positionName>    <address>
+<deliveryPoint>1345 Jayhawk Blvd</deliveryPoint><city>Lawrence</city><administrativeArea>KS</administrativeArea><postalCode>66045</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 785-864-3403</phone><electronicMailAddress>rafe@ku.edu</electronicMailAddress><onlineUrl>http://herpetology.biodiversity.ku.edu/</onlineUrl>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-03-28T05:39:39.639+02:00</dateStamp>
+        <citation>University of Kansas Biodiversity Institute: KUBI Herpetology Collection</citation>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

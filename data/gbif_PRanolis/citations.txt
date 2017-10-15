@@ -1,0 +1,46 @@
+Please cite this data as follows, and pay attention to the rights documented in the rights.txt:
+Please respect the rights declared for each dataset in the download: 
+Louisiana State University Museum of Natural Science - Herp Tissues (LSUMZ) doi:10.15468/kuzcfv
+University of Kansas Biodiversity Institute: KUBI Herpetology Collection doi:10.15468/ubdwdc
+Yale University Peabody Museum: Vertebrate Zoology Division - Herpetology, Yale Peabody Museum doi:10.15468/ypdvp9
+Naturalis Biodiversity Center: Naturalis Biodiversity Center (NL) - Aves doi:10.15468/dxmzbz
+Natural History Museum of Los Angeles County: LACM Vertebrate Collection doi:10.15468/77rmwd
+AMNH Herpetology Collection doi:10.15468/jfkgyh
+LSUMZ Herp Collection doi:10.15468/iogakq
+UMMZ Herpetology Collection doi:10.15468/g3bard
+Biodiversity Research and Teaching Collections, Department of Wildlife and Fisheries Sciences, Texas A&M University, College Station, TX, USA. doi:10.15468/szomia
+iNaturalist.org: iNaturalist Research-grade Observations doi:10.15468/ab3s5x
+Field Museum: Field Museum of Natural History (Zoology) Amphibian and Reptile Collection doi:10.15468/u2pzhj
+TNHC Herpetology Collection doi:10.15468/xrorih
+Naturalis Biodiversity Center: Zoological Museum Amsterdam, University of Amsterdam (NL) – Herpetology doi:10.15468/bhirti
+Royal Ontario Museum: Herpetology Collection - Royal Ontario Museum doi:10.15468/mmh1bl
+PSM Collection doi:10.15468/3oaz5o
+University of Colorado Museum of Natural History Amphibians and Reptiles Collection doi:10.15468/1llmgl
+Naturalis Biodiversity Center: Naturalis Biodiversity Center (NL) - Cainozoic Mollusca doi:10.15468/pqhlwr
+Arizona State University, Global Institute for Sustainability: Arizona State University Amphibian and Reptile Collection doi:10.15468/bgmxgh
+Academy of Natural Sciences: Herpetology doi:10.15468/2wlj2m
+Senckenberg: Collection Herpetology SMF doi:10.15468/lkc3vq
+Orrell T (2013): NMNH occurrence DwC-A. v8.10. National Museum of Natural History, Smithsonian Institution. Dataset/Occurrence. http://collections.nmnh.si.edu/ipt/resource?r=nmnhdwca&v=8.10 doi:10.15468/dipjcr
+Zoological Museum, Natural History Museum of Denmark: Amphibians and Reptiles collection at the Natural History Museum of Denmark (SNM) doi:10.15468/uakqta
+Naturalis Biodiversity Center: Naturalis Biodiversity Center (NL) - Chelicerata and Myriapoda doi:10.15468/63lozv
+San Diego Natural History Museum Herpetology Collection doi:10.15468/tacqs9
+University of Washington Burke Museum Herpetology Collection doi:10.15468/419lza
+Monte L. Bean Life Science Museum Herpetology Collection (BYU) doi:10.15468/tekwqq
+GBIF-Sweden: NRM-Herpetology doi:10.15468/b9o7h4
+Colección de Herpetología de la Universidad del Valle (2011 - ). Colección de anfibios y reptiles del Laboratorio de Herpetología de la Universidad del Valle (UV-C), 6.663 registros, aportados por Castro-Herrera, F. (curador de la colección, contacto del recurso), Salinas, S. (creador del recurso), Valencia-Aguilar, A. (bióloga), Garzon Romero, E. (publicador), Londoño, E. (custodio de los datos).  En linea, http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona, Versión 12.0 (actualizado el 03/06/2015)., http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona doi:10.15468/3gcjmz
+Natural History Museum (2015): Collection specimens data.nhm.ac.uk., http://dx.doi.org/10.5519/0002965 doi:10.5519/0002965
+Naturalis Biodiversity Center: Naturalis Biodiversity Center (NL) - Amphibia and Reptilia doi:10.15468/ythnjq
+Cincinnati Museum Center: CMC_herpetology_vouchers doi:10.15468/jahr84
+Milwaukee Public Museum doi:10.15468/ef6frs
+University of Arizona Museum of Natural History (UAZ) Herpetology Collection doi:10.15468/rqnb5a
+INHS Herps Collection doi:10.15468/74ijg4
+Museum of Comparative Zoology, Harvard University (2016): Museum of Comparative Zoology, Harvard University.  Dataset/Occurrence. http://digir.mcz.harvard.edu/ipt/resource?r=mczbase doi:10.15468/p5rupv, doi:10.15468/p5rupv doi:10.15468/p5rupv
+Sam Noble Oklahoma Museum of Natural History: Reptile Specimens doi:10.15468/cplkwg
+UTEP Herp Collection doi:10.15468/q0xpml
+Carnegie Museum of Natural History Herpetology Collection doi:10.15468/lxe6h4
+California Academy of Sciences: CAS Herpetology (HERP) doi:10.15468/bvoyqy
+SysTax: SysTax -  Zoological Collections doi:10.15468/zyqkbl
+MSUM Ichthyology and Herpetology Collections doi:10.15468/5nvdeb
+Laboratory for Environmental Biology, Centennial Museum, University of Texas at El Paso doi:10.15468/bbj8ad
+Museum of Vertebrate Zoology (MVZ), University of California, Berkeley doi:10.15468/pi1mts
+Cornell University Museum of Vertebrates: CUMV Reptile Collection (Arctos) doi:10.15468/yfppw5

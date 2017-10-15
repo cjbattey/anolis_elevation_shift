@@ -1,0 +1,102 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="e48d6c49-34a3-4df6-8206-121c061f190d"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/u2pzhj</alternateIdentifier>
+    <alternateIdentifier>http://fmipt.fieldmuseum.org:8080/ipt/resource.do?r=fmnh_herps</alternateIdentifier>
+    <alternateIdentifier>e48d6c49-34a3-4df6-8206-121c061f190d</alternateIdentifier>
+    <alternateIdentifier>14341</alternateIdentifier>
+  <title>Field Museum of Natural History (Zoology) Amphibian and Reptile Collection</title>
+<creator>
+    <individualName>
+<givenName>Sharon</givenName>      <surName>Grant</surName>
+    </individualName>
+<organizationName>Field Museum of Natural History</organizationName><positionName>Technology Liaison to Science</positionName>    <address>
+<deliveryPoint>1400 S Lake Shore Drive</deliveryPoint><city>Chicago</city><administrativeArea>IL</administrativeArea><postalCode>60605</postalCode><country>UNITED_STATES</country>    </address>
+<phone>3126657203</phone><electronicMailAddress>sgrant@fieldmuseum.org</electronicMailAddress><onlineUrl>http://www.fieldmuseum.org</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Alan</givenName>      <surName>Resetar</surName>
+    </individualName>
+<organizationName>Field Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>1400 S Lake Shore Drive</deliveryPoint><city>Chicago</city><administrativeArea>IL</administrativeArea><postalCode>60605</postalCode><country>UNITED_STATES</country>    </address>
+<electronicMailAddress>aresetar@fieldmuseum.org</electronicMailAddress><onlineUrl>http://fieldmuseum.org/users/alan-resetar</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>Laura</givenName>      <surName>Russell</surName>
+    </individualName>
+<organizationName>VertNet</organizationName><positionName>VertNet Programmer</positionName><phone>+01 785 813-1496</phone><electronicMailAddress>larussell@vertnet.org</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Kathleen</givenName>      <surName>Kelly</surName>
+    </individualName>
+<organizationName>Field Museum of Natural History</organizationName><positionName>Assistant Collection Manager</positionName>    <address>
+<deliveryPoint>1400 S Lake Shore Drive</deliveryPoint><city>Chicago</city><administrativeArea>IL</administrativeArea><postalCode>60605</postalCode><country>UNITED_STATES</country>    </address>
+<electronicMailAddress>kkelly@fieldmuseum.org</electronicMailAddress><onlineUrl>http://fieldmuseum.org/users/kathleen-kelly</onlineUrl>    <role>CUSTODIAN_STEWARD</role>
+</associatedParty>
+<pubDate>
+        2015-05-14
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>The collection serves as a major research resource for the national and international scientific communities and contains unique material of special historical and ecological significance. The collection database is accessible online on this website and through HerpNET. During the 1970’s, it was recognized as one of the five largest and most representative collections of amphibians and reptiles in the United States (Wake et al. 1975). Currently it ranks among the top six herpetological collections in the United States and one of the twenty largest in the World. Collection use has been growing steadily. Loan requests, visits by researchers, and information requests are at high levels. Zoologists, paleontologists, wildlife disease researchers and other disciplines utilize the collections. Regular collection users include professional scientists, agency personnel and students (undergraduate and graduate).</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <additionalInfo>
+    <para>The Field Museum of Natural History (FMNH) should be clearly identified as the source of the data. We also request copies, reprints or urls of publications that are based on our collections.</para>
+  </additionalInfo>
+  <intellectualRights>
+    <para>Copyright © 2014 The Field Museum of Natural History
+Full details may be found at http://fieldmuseum.org/about/copyright-information</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://fieldmuseum.org/explore/department/zoology/amphibians-and-reptiles/collections</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>Global</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+  </coverage>
+  <purpose>
+    <para>Information is available for not-for-profit use.</para>
+  </purpose>
+  <contact>
+    <individualName>
+<givenName>Sharon</givenName>      <surName>Grant</surName>
+    </individualName>
+<organizationName>Field Museum of Natural History</organizationName><positionName>Technology Liaison to Science</positionName>    <address>
+<deliveryPoint>1400 S Lake Shore Drive</deliveryPoint><city>Chicago</city><administrativeArea>IL</administrativeArea><postalCode>60605</postalCode><country>UNITED_STATES</country>    </address>
+<phone>3126657203</phone><electronicMailAddress>sgrant@fieldmuseum.org</electronicMailAddress><onlineUrl>http://www.fieldmuseum.org</onlineUrl>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2015-07-29T02:49:16.021+02:00</dateStamp>
+        <citation>Field Museum: Field Museum of Natural History (Zoology) Amphibian and Reptile Collection</citation>
+        <resourceLogoUrl>http://fmipt.fieldmuseum.org:8080/ipt/logo.do?r=fmnh_fishes</resourceLogoUrl>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

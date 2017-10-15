@@ -1,0 +1,134 @@
+
+
+Dataset: LSUMZ Herp Tissues
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: KUBI Herpetology Collection
+Rights as supplied: http://creativecommons.org/licenses/by/4.0/deed.en_US and http://biodiversity.ku.edu/research/university-kansas-biodiversity-institute-data-publication-and-use-norms
+
+Dataset: Vertebrate Zoology Division - Herpetology, Yale Peabody Museum
+Rights as supplied: Public Domain (CC0 1.0)
+
+Dataset: Naturalis Biodiversity Center (NL) - Aves
+Rights as supplied: This work is licensed under a Creative Commons CCZero 1.0 License http://creativecommons.org/publicdomain/zero/1.0/legalcode.
+
+Dataset: LACM Vertebrate Collection
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: AMNH Herpetology Collections
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0/ and http://www.vertnet.org/resources/norms.html
+
+Dataset: Herp specimens
+Rights as supplied: LSUMZ data records may be used by individual researchers or research groups for non-commercial purposes. These data may not be repackaged, resold, or redistributed in any form without the express written consent of the section Curator or Director of the LSU Museum of Natural Science. If any of these records are used in an analysis, report, or publication, the provenance of the original data must be acknowledged and the LSUMZ notified. The Museum of Natural Science or its staff is not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: UMMZ Herpetology Collection
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0
+
+Dataset: Biodiversity Research and Teaching Collections - TCWC Vertebrates
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0
+
+Dataset: iNaturalist Research-grade Observations
+Rights as supplied: Creative Commons Attribution-NonCommercial License
+
+Dataset: Field Museum of Natural History (Zoology) Amphibian and Reptile Collection
+Rights as supplied: Copyright © 2014 The Field Museum of Natural History
+Full details may be found at http://fieldmuseum.org/about/copyright-information
+
+Dataset: TNHC Herpetology Collection
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: Zoological Museum Amsterdam, University of Amsterdam (NL) – Herpetology
+Rights as supplied: Not supplied
+
+Dataset: Herpetology Collection - Royal Ontario Museum
+Rights as supplied: Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+
+Dataset: PSM Vertebrates Collection
+Rights as supplied: PSM data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the PSM. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and the PSM notified. The James R. Slater Museum of Natural History or its staff is not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: UCM Amphibian and Reptile Collection (Arctos)
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: Naturalis Biodiversity Center (NL) - Cainozoic Mollusca
+Rights as supplied: This work is licensed under a Creative Commons CCZero 1.0 License http://creativecommons.org/publicdomain/zero/1.0/legalcode.
+
+Dataset: Arizona State University Amphibian and Reptile Collection
+Rights as supplied: Not supplied
+
+Dataset: Herpetology
+Rights as supplied: Not supplied
+
+Dataset: Collection Herpetology SMF
+Rights as supplied: Not supplied
+
+Dataset: NMNH occurrence DwC-A
+Rights as supplied: Public Domain (CC0 1.0)
+
+Dataset: Amphibians and Reptiles collection at the Natural History Museum of Denmark (SNM)
+Rights as supplied: Zoological Museum - Natural History Museum of Denmark This work is licensed under a Creative Commons Attribution-Noncommercial License (http://creativecommons.org/licenses/by-nc/3.0/).
+
+Dataset: Naturalis Biodiversity Center (NL) - Chelicerata and Myriapoda
+Rights as supplied: This work is licensed under a Creative Commons CCZero 1.0 License http://creativecommons.org/publicdomain/zero/1.0/legalcode.
+
+Dataset: SDNHM Herpetology Collection
+Rights as supplied: SDNHM data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curator at the San Diego Natural History Museum. If any record is used in an analysis or report, an acknowledgment should be made that the data originated from the San Diego Natural History Museum.  SDNHM and its staff are not responsible for damages, injury or loss due to the use of these data. For more information, please consult our Terms &amp; Conditions (http://www.sdnhm.org/science/herpetology/collections/search-collection/)
+
+Dataset: UWBM Herpetology Collection (Arctos)
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: BYU Herpetology Collection
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0/ and http://vertnet.org/resources/norms.html
+
+Dataset: NRM-Herpetology
+Rights as supplied: Public Domain (CC0 1.0)
+
+Dataset: Colección de anfibios y reptiles del Laboratorio de Herpetología de la Universidad del Valle (UV-C), http://ipt.sibcolombia.net/valle/resource.do?r=herpetosgorgona
+Rights as supplied: Este trabajo está licenciado bajo una licencia Creative Commons Zero (CC0) 1.0  http://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Dataset: Natural History Museum (London) Collection Specimens, http://dx.doi.org/10.5519/0002965
+Rights as supplied: This work is licensed under a Creative Commons CCZero License/Waiver.
+
+Dataset: Naturalis Biodiversity Center (NL) - Amphibia and Reptilia
+Rights as supplied: This work is licensed under a Creative Commons CCZero 1.0 License http://creativecommons.org/publicdomain/zero/1.0/legalcode.
+
+Dataset: CMC_herpetology_vouchers
+Rights as supplied: Not supplied
+
+Dataset: MPM Herpetology
+Rights as supplied: Milwaukee Public Museum (MPM) data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the MPM. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and the SMNS notified. The MPM and its staff are not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: UAZ Herpetology Collection
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: Herps Specimens
+Rights as supplied: INHS data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the Illinois Natural History Survey. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and INHS notified. The Illinois Natural History Survey and its staff are not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: Museum of Comparative Zoology, Harvard University, doi:10.15468/p5rupv
+Rights as supplied: Creative Commons Attribution Non Commercial (CC-BY-NC) 4.0 License
+
+Dataset: Reptile Specimens
+Rights as supplied: Public Domain (CC0 1.0)
+
+Dataset: Herps Specimens
+Rights as supplied: UTEP data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the University of Texas at El Paso. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and UTEP notified. The University of Texas at El Paso or its staff are not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: CM Herps Collection
+Rights as supplied: Carnegie Museum of Natural History (CM) data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the CM. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and the CM notified. The CM and its staff are not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: CAS Herpetology (HERP)
+Rights as supplied: Public Domain (CC0 1.0)
+
+Dataset: SysTax -  Zoological Collections
+Rights as supplied: Not supplied
+
+Dataset: MSUM Ichthyology and Herpetology Collections
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: UTEP Vertebrates
+Rights as supplied: UTEP data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the University of Texas at El Paso. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and UTEP notified. The University of Texas at El Paso or its staff are not responsible for damages, injury or loss due to the use of these data.
+
+Dataset: MVZ Herp Collection (Arctos)
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html
+
+Dataset: CUMV Reptile Collection (Arctos)
+Rights as supplied: http://creativecommons.org/publicdomain/zero/1.0 and http://vertnet.org/resources/norms.html

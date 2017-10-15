@@ -1,0 +1,46 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="985a48b0-c060-11dd-a30f-b8a03c50a862"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/bhirti</alternateIdentifier>
+    <alternateIdentifier>684</alternateIdentifier>
+  <title>Zoological Museum Amsterdam, University of Amsterdam (NL) – Herpetology</title>
+<creator>
+</creator>
+<metadataProvider>
+</metadataProvider>
+<associatedParty>
+<positionName>system administrator</positionName><phone>+31.20.5255440</phone><electronicMailAddress>J.C.S.Creuwels@uva.nl</electronicMailAddress></associatedParty>
+<associatedParty>
+<positionName>system administrator</positionName><phone>+31.20.5257191</phone><electronicMailAddress>yjong@uva.nl</electronicMailAddress></associatedParty>
+<associatedParty>
+<positionName>data administrator</positionName><phone>+31.20.5256286</phone><electronicMailAddress>h.praagman@uva.nl</electronicMailAddress></associatedParty>
+<associatedParty>
+<positionName>data administrator</positionName><phone>+31.20.5255438</phone><electronicMailAddress>r.vonk@uva.nl</electronicMailAddress></associatedParty>
+<associatedParty>
+<positionName>data administrator</positionName><phone>+31.20.5255496</phone><electronicMailAddress>c.h.j.hof@uva.nl</electronicMailAddress></associatedParty>
+<language>en</language>
+<abstract>
+  <para>The collection Herpetology consists of more than 15000 registered specimens: 9500 reptilia (1750 species), 5500 amphibia (880 species). Because most specimens are not individually labeled, the total number in the collection is probably much higher: at least 50,000 specimens. Included are 353 type specimens: 1 cotype, 45 holotypes, 1 neotype, 26 lectotypes, 63 syntypes, 64 paralectotypes, 151 paratypes, 63 syntypes, 2 topotypes. Most of the material has been collected in Indonesia and Suriname. There is a large collection of Chameleons (Hillenius, 1959), Anura from Madagascar (Blommers Schlösser, 1980; Vences, 2005); The European herpetofauna is also well represented, with a focus on the Dutch herpetofauna (A. Zuiderwijk) and European newts (J.W. Arntzen). The herpetologist, the late Dick Hillenius, was the first curator of this collection and between 2002-2005 Miguel Vences curated the herpetology collection. Vences increased the number of specimens from Madagascar and described numerous new species based on ZMA material.</para>
+</abstract>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://db01.nlbif.sara.nl/tapir/tapir.php/zma_herpetology</url>
+    </online>
+  </distribution>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2016-01-28T04:36:54.682+01:00</dateStamp>
+        <citation>Naturalis Biodiversity Center: Zoological Museum Amsterdam, University of Amsterdam (NL) – Herpetology</citation>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>

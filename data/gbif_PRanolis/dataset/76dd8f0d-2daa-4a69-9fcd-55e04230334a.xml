@@ -1,0 +1,119 @@
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.0.2/eml.xsd"
+         packageId="76dd8f0d-2daa-4a69-9fcd-55e04230334a"  system="http://gbif.org" scope="system"
+         xml:lang="en">
+
+<dataset>
+      <alternateIdentifier system="doi.org">doi:10.15468/lxe6h4</alternateIdentifier>
+    <alternateIdentifier>http://ipt.vertnet.org:8080/ipt/resource.do?r=cm_herps</alternateIdentifier>
+    <alternateIdentifier>76dd8f0d-2daa-4a69-9fcd-55e04230334a</alternateIdentifier>
+    <alternateIdentifier>14929</alternateIdentifier>
+  <title>CM Herps Collection</title>
+<creator>
+    <individualName>
+<givenName>Stephen</givenName>      <surName>Rogers</surName>
+    </individualName>
+<organizationName>Carnegie Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>4400 Forbes Ave.</deliveryPoint><city>Pittsburg</city><administrativeArea>PA</administrativeArea><postalCode>15213-4080</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 412-622-3255</phone><electronicMailAddress>rogerss@carnegiemnh.org</electronicMailAddress><onlineUrl>http://www.carnegiemnh.org/herps/index.html</onlineUrl></creator>
+<metadataProvider>
+    <individualName>
+<givenName>Stephen</givenName>      <surName>Rogers</surName>
+    </individualName>
+<organizationName>Carnegie Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>4400 Forbes Ave.</deliveryPoint><city>Pittsburg</city><administrativeArea>PA</administrativeArea><postalCode>15213-4080</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 412-622-3255</phone><electronicMailAddress>rogerss@carnegiemnh.org</electronicMailAddress><onlineUrl>http://www.carnegiemnh.org/herps/index.html</onlineUrl></metadataProvider>
+<associatedParty>
+    <individualName>
+<givenName>John</givenName>      <surName>Wieczorek</surName>
+    </individualName>
+<organizationName>Museum of Vertebrate Zoology at UC Berkeley</organizationName><positionName>Information Architect</positionName><electronicMailAddress>tuco@berkeley.edu</electronicMailAddress>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>David</givenName>      <surName>Bloom</surName>
+    </individualName>
+<organizationName>VertNet</organizationName><positionName>VertNet Coordinator</positionName><electronicMailAddress>dbloom@vertnet.org</electronicMailAddress><onlineUrl>http://www.vertnet.org</onlineUrl>    <role>PROGRAMMER</role>
+</associatedParty>
+<associatedParty>
+    <individualName>
+<givenName>Laura</givenName>      <surName>Russell</surName>
+    </individualName>
+<organizationName>VertNet</organizationName><positionName>VertNet Programmer</positionName><phone>+01 785 813-1496</phone><electronicMailAddress>larussell@vertnet.org</electronicMailAddress><onlineUrl>http://www.vertnet.org</onlineUrl>    <role>PROGRAMMER</role>
+</associatedParty>
+<pubDate>
+        2015-10-11
+</pubDate>
+<language>ENGLISH</language>
+<abstract>
+  <para>Herpetology maintains a collection of more than 207,500 specimens and ranks as about the ninth largest amphibian and reptile collection in the United States. Ninety percent are fluid preserved; others are preserved as skeletons, skins, mounts, or cleared and stained preparations.
+
+Notable historic collections rich in type specimens are the Taylor Philippine collection, the Le Boutellier collection of South American snakes, and specimens from early museum expeditions to the Isle of Pines and Angola. Collection data are completely computerized. Collection growth has averaged 1–2% per year. There are approximately 35 new research loans a year handled by the collection manager, and around 80 research data inquiries are filled annually.
+
+Research is supported by a library with an outstanding collection of 19th-century herpetological literature (Gunther Collection) and more than 22,000 reprints.</para>
+</abstract>
+  <keywordSet>
+      <keyword>Occurrence</keyword>
+      <keywordThesaurus>GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml</keywordThesaurus>
+  </keywordSet>
+  <keywordSet>
+      <keyword>Specimen</keyword>
+      <keywordThesaurus>GBIF Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml</keywordThesaurus>
+  </keywordSet>
+  <intellectualRights>
+    <para>Carnegie Museum of Natural History (CM) data records may be used by individual researchers or research groups, but they may not be repackaged, resold, or redistributed in any form without the express written consent of a curatorial staff member of the CM. If any of these records are used in an analysis or report, the provenance of the original data must be acknowledged and the CM notified. The CM and its staff are not responsible for damages, injury or loss due to the use of these data.</para>
+  </intellectualRights>
+  <distribution scope="document">
+    <online>
+      <url function="information">http://www.carnegiemnh.org/herps/index.html</url>
+    </online>
+  </distribution>
+  <coverage>
+      <geographicCoverage>
+          <geographicDescription>The collection includes the largest and most complete collection of Pennsylvania amphibians and reptiles in existence and significant collections from adjacent states, particularly Virginia, West Virginia, and Maryland. There are specimens collected from all parts of the United States and most parts of the world including major accessions from the Caribbean, Mexico, Guatemala, Belize, Paraguay, northern South America, Spain, South Africa, Cameroon, India, and Sri Lanka. The collection of North American freshwater turtles is among the largest in the world.</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-180</westBoundingCoordinate>
+          <eastBoundingCoordinate>180</eastBoundingCoordinate>
+          <northBoundingCoordinate>90</northBoundingCoordinate>
+          <southBoundingCoordinate>-90</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+        <taxonomicCoverage>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Reptilia</taxonRankValue>
+                <commonName>reptiles</commonName>
+            </taxonomicClassification>
+            <taxonomicClassification>
+                <taxonRankName>Class</taxonRankName>
+              <taxonRankValue>Amphibia</taxonRankValue>
+                <commonName>amphibians</commonName>
+            </taxonomicClassification>
+        </taxonomicCoverage>
+  </coverage>
+  <contact>
+    <individualName>
+<givenName>Stephen</givenName>      <surName>Rogers</surName>
+    </individualName>
+<organizationName>Carnegie Museum of Natural History</organizationName><positionName>Collection Manager</positionName>    <address>
+<deliveryPoint>4400 Forbes Ave.</deliveryPoint><city>Pittsburg</city><administrativeArea>PA</administrativeArea><postalCode>15213-4080</postalCode><country>UNITED_STATES</country>    </address>
+<phone>+01 412-622-3255</phone><electronicMailAddress>rogerss@carnegiemnh.org</electronicMailAddress><onlineUrl>http://www.carnegiemnh.org/herps/index.html</onlineUrl>  </contact>
+
+</dataset>
+
+<additionalMetadata>
+  <metadata>
+    <gbif>
+        <dateStamp>2015-10-11T11:12:41.990+02:00</dateStamp>
+        <citation>Carnegie Museum of Natural History Herpetology Collection</citation>
+        <collection>
+          <parentCollectionIdentifier>CM</parentCollectionIdentifier>
+          <collectionIdentifier>Herps</collectionIdentifier>
+          <collectionName>CM Herps</collectionName>
+        </collection>
+    </gbif>
+  </metadata>
+</additionalMetadata>
+
+</eml:eml>
