@@ -62,7 +62,7 @@ anolis_w_all$species <- "All Species"
 anolis_w_all <- rbind(anolis,anolis_w_all)
 
 #summarize by locality group for per-locality analyses & plots
-locs <- ddply(comb,.(locality_group,ageClass2,ageClass,species),summarize,n=length(alt),alt=mean(alt),lat=mean(lat),long=mean(long))
+locs <- ddply(comb_w_all,.(locality_group,ageClass2,ageClass,species),summarize,n=length(alt),alt=mean(alt),lat=mean(lat),long=mean(long))
 
 ############# end data loading and prep ################
 ########################################################
@@ -200,7 +200,7 @@ grid.arrange(forest_maps,forest_histograms,layout_matrix=matrix(c(1,1,1,1,
 #violin plot of elevation by time period
 elevation_plot <- ggplot(data=comb,aes(x=factor(ageClass2),y=alt))+
   facet_grid(.~species)+
-  theme_minimal()+xlab("")+
+  theme_minimal()+xlab("")+ylab("")+
   theme(strip.text.x=element_text(size=8),strip.background = element_rect(color="white",fill="white"), 
         axis.text.x=element_blank(),axis.ticks.x=element_blank(),
         plot.title = element_text(hjust=.75))+
@@ -219,7 +219,7 @@ all_plot <- ggplot(data=subset(comb_w_all,species=="All Species"),aes(x=factor(a
 
 locs_plot <- ggplot(data=subset(locs,species != "All Species"),aes(x=factor(ageClass2),y=alt))+
   facet_grid(.~species)+
-  theme_minimal()+xlab("")+
+  theme_minimal()+xlab("")+ylab("")+
   theme(strip.text.x=element_text(size=8),strip.background = element_rect(color="white",fill="white"), 
         axis.text.x=element_text(angle=45,hjust=1,vjust=1))+
   geom_point(size=.2,col="grey",position="jitter")+
