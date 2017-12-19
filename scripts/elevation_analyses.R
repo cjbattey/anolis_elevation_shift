@@ -52,6 +52,8 @@ coords <- join(coords,obs.per.group,by=c("locality_group","ageClass"))
 anolis <- join(anolis,coords,by=c("long","lat","ageClass"))
 comb <- join(comb,coords,by=c("long","lat","ageClass"))
 nlevels(factor(comb$locality_group))
+loc_group_alt <- ddply(comb,.(locality_group),summarize,loc_group_alt=mean(na.omit(alt)))
+comb <- join(comb,loc_group_alt,by="locality_group")
 
 #data frame including "all species" 
 comb_w_all <- comb
@@ -98,13 +100,13 @@ age4 <- reclassify(age4,t(matrix(c(0,NA))))
 alt2 <- projectRaster(alt,age1)
 pdf(file="forest_map_wide.pdf",width=6.5,height=1.5)
 par(mfrow=c(1,4),oma = c(1,1,0,0) + 0.1,mar = c(1,1,1,1) + 0.1)
-plot(age1,main="1935-1951",axes=F,legend=F,col="black")
+plot(age1,main="1935-1951",axes=F,legend=F,col="forestgreen")
 plot(coasts.utm,lwd=.5,add=T)
-plot(age2==1,main="1952-1977",axes=F,legend=F,col="black")
+plot(age2==1,main="1952-1977",axes=F,legend=F,col="forestgreen")
 plot(coasts.utm,lwd=.5,add=T)
-plot(age3==1,main="1978-1990",axes=F,legend=F,col="black")
+plot(age3==1,main="1978-1990",axes=F,legend=F,col="forestgreen")
 plot(coasts.utm,lwd=.5,add=T)
-plot(age4==1,main="1991-2000",axes=F,legend=F,col="black")
+plot(age4==1,main="1991-2000",axes=F,legend=F,col="forestgreen")
 plot(coasts.utm,lwd=.5,add=T)
 par(mfrow=c(1,1))
 dev.off()
@@ -128,18 +130,18 @@ tmp$age <- factor(tmp$age,levels(tmp$age)[c(1,2,3,4)])
 cellConversion <- function(x){ 
   x*0.0009 
 }
-#pdf("forest_histogram.pdf",width=6.5,height=2)
-forest_histograms <- ggplot(data=tmp,aes(x=alt_30s_UTM19N))+
+pdf("forest_histogram.pdf",width=6,height=2)
+ggplot(data=tmp,aes(x=alt_30s_UTM19N))+
   scale_fill_manual(values = c("grey10","grey35","grey60","grey85"),name="Time Period")+
-  facet_wrap(~age)+
+  facet_wrap(~age,nrow=1)+coord_flip()+
   theme_minimal()+theme(strip.background = element_blank())+
   xlab("Elevation")+ylab(("Forest Area "~(km^2)))+
   theme(axis.text.x=element_text(angle=45,hjust=1,vjust=1),legend.position = "right")+
   scale_y_continuous(labels=cellConversion)+
-  geom_histogram(bins=60)
-#dev.off()
+  geom_histogram(bins=100,col=NA,fill="forestgreen")
+dev.off()
 
-#downsampled forest age map in ggplot (full res freezed grid)
+#downsampled forest age map in ggplot (full res freezes grid)
 tmp.r <- projectRaster(age1,crs=crs(proj4.wgs),res=.5/60)
 tmp.p <- rasterToPolygons(tmp.r,dissolve = T)
 f1 <- fortify(tmp.p)
@@ -322,7 +324,7 @@ chi2table
 shannon_diversity <- function(x) { 
   plnp <- c()
   n <- nrow(x)
-  for(i in levels(factor(x$species))){
+  for(i in unique(x$species)){
     sp <- subset(x,species==i)
     p <- nrow(sp)/n
     plnp <- append(plnp,p*log(p))
@@ -330,13 +332,20 @@ shannon_diversity <- function(x) {
   return(c(div=-sum(plnp)))
 }
 
-div_low <- subset(comb,alt<250) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
+#drop sites with only one species 
+div_data <- ddply(comb,.(locality_group,ageClass),function(e){
+  if(length(unique(e$species))>1){
+    e
+  }
+})
+div_data <- subset(div_data,!is.na(locality_group))
+div_low <- subset(div_data,loc_group_alt<250) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
 div_low$altbin <- "0-250 m"
-div_mid <- subset(comb,alt>=250 & alt<500) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
+div_mid <- subset(div_data,loc_group_alt>=250 & loc_group_alt<500) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
 div_mid$altbin <- "251-500 m"
-div_high <- subset(comb,alt>=500 & alt<750) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
+div_high <- subset(div_data,loc_group_alt>=500 & loc_group_alt<750) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
 div_high$altbin <- "501-750 m"
-div_vhigh <- subset(comb,alt>=750) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
+div_vhigh <- subset(div_data,loc_group_alt>=750) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
 div_vhigh$altbin <- "750-1150 m"
 div <- rbind(div_low,div_mid,div_high,div_vhigh)
 
@@ -348,21 +357,12 @@ div_wilcox_table <- ddply(div,.(altbin),function(e){
   p <- w$p.value %>% round(3)
   shift <- w$estimate
   conf <- c(w$conf.int[1],w$conf.int[2])
-  c(p,n1,n2,shift,conf)
+  pre_med <- median(subset(e,ageClass2=="1952-1977")$div)
+  post_med <- median(subset(e,ageClass2=="1991-2015")$div)
+  c(p,n1,n2,shift,conf,pre_med,post_med)
 })
-colnames(div_wilcox_table) <- c("Altitude Bin","P","N1","N2","Shift","CI_0.05","CI_0.95")
-
-ddply(div,.(altbin),function(e){
-  w <- t.test(e$div[e$ageClass2=="1991-2015"],e$div[e$ageClass2=="1952-1977"],conf.int = T)
-  n1 <- nrow(subset(e,ageClass2=="1952-1977"))
-  n2 <- nrow(subset(e,ageClass2=="1991-2015"))
-  p <- w$p.value %>% round(3)
-  shift <- w$estimate[1]-w$estimate[2]
-  conf <- c(w$conf.int[1],w$conf.int[2])
-  c(p,n1,n2,w$estimate[2],w$estimate[1],shift,conf)
-})
-#colnames(div_t_table) <- c("Altitude Bin","P","N1","N2","Shift","CI_0.05","CI_0.95")
-
+colnames(div_wilcox_table) <- c("Altitude Bin","P","N1","N2","Shift","CI_0.05","CI_0.95","pre_med","post_med")
+div_wilcox_table
 
 bin_plot <- ggplot(div,aes(x=ageClass2,y=div))+facet_grid(~altbin)+
   theme_minimal()+theme(axis.text.x=element_text(angle=45,hjust=1),
@@ -375,9 +375,34 @@ bin_plot <- ggplot(div,aes(x=ageClass2,y=div))+facet_grid(~altbin)+
   annotate(geom="text",label=c("*"," "," "," "),x=1.5,y=1.65,size=5)
 
 #regression of locality species richness by altitude, split by age class
-locs <- ddply(comb,.(locality_group,ageClass,ageClass2),summarize,alt=mean(alt),div=shannon_diversity(data.frame(species)))
-lm(locs$div[locs$ageClass==2]~locs$alt[locs$ageClass==2]) %>% summary() #p<<0.01, R2=0.1833, slope=0.212 sp/100M
-lm(locs$div[locs$ageClass==4]~locs$alt[locs$ageClass==4]) %>% summary() #p<<0.01, R2=0.0697, slope=0.149 sp/100M
+locs <- ddply(comb,.(locality_group,ageClass,ageClass2),summarize,alt=mean(na.omit(alt)),div=shannon_diversity(data.frame(species)))
+locs <- subset(locs,div>0)
+locs2 <- subset(locs,ageClass==2)
+locs4 <- subset(locs,ageClass==4)
+fit2 <- nls(formula=div~a/(1+exp(-b*(alt-c))),data=locs2,start=list(a=1,b=.5,c=5))
+fit4 <- nls(formula=div~a/(1+exp(-b*(alt-c))),data=locs4,start=list(a=1,b=.5,c=5))
+CI2 <- confint2(fit2,level=.8)
+CI2_low <- sapply(locs2$alt,function(e) CI2[1,1]/(1+exp(-CI2[2,1]*(e-CI2[3,1]))))
+CI2_high <- sapply(locs2$alt,function(e) CI2[1,2]/(1+exp(-CI2[2,2]*(e-CI2[3,2]))))
+CI4 <- confint2(fit4,level=.8)
+CI4_low <- sapply(locs4$alt,function(e) CI4[1,1]/(1+exp(-CI4[2,1]*(e-CI4[3,1]))))
+CI4_high <- sapply(locs4$alt,function(e) CI4[1,2]/(1+exp(-CI4[2,2]*(e-CI4[3,2]))))
+curves <- data.frame(ageClass2=c(rep("1952-1977",nrow(locs2)),rep("1991-2015",nrow(locs4))),
+                     alt=c(locs2$alt,locs4$alt),
+                     div=c(predict(fit2),predict(fit4)),
+                     CI_low=c(CI2_low,CI4_low),
+                     CI_high=c(CI2_high,CI4_high))
+
+ggplot(data=locs,aes(x=alt,y=div))+facet_wrap(~ageClass2)+
+  theme_minimal()+theme(strip.background = element_blank())+
+  geom_point()+
+  geom_line(data=curves)+
+  geom_line(data=curves,aes(y=CI_low),col="blue")+
+  geom_line(data=curves,aes(y=CI_high),col="red")
+
+lm(locs$div[locs$ageClass==2]~locs$alt[locs$ageClass==2]) %>% summary() #p<<0.01, R2=0.1833, slope=0.212 sp/100M #p=0.048, R2=0.063, slope=
+lm(locs$div[locs$ageClass==4]~locs$alt[locs$ageClass==4]) %>% summary() #p<<0.01, R2=0.0697, slope=0.149 sp/100M #p=0.016, R2=0.036, slope=
+
 
 
 lm_plot<-ggplot(locs,aes(x=alt,y=div,shape=ageClass2,col=ageClass2))+
@@ -396,7 +421,7 @@ lm_plot<-ggplot(locs,aes(x=alt,y=div,shape=ageClass2,col=ageClass2))+
   geom_smooth(method="lm",fill=NA,show.legend=F)
 
   
-pdf("./figures/div_plot.pdf",width=3,height=4.5) 
+pdf("~/Dropbox/anolis/figures/final/figS3_div_plot.pdf",width=3,height=4.5) 
 grid.arrange(bin_plot,lm_plot,ncol=1)
 dev.off()
 
