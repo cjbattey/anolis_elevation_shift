@@ -260,7 +260,7 @@ tmp <- ddply(comb,.(species),function (i){
   post.max=round(max(i$alt[i$ageClass==4]),2)
   shift=round(t$estimate,2)
   #shift=round(median(i$alt[i$ageClass==4]) - median(i$alt[i$ageClass==2]),2)
-  p=t$p.value
+  p=p.adjust(t$p.value,method="fdr",n=6)
   pre <- paste0(pre.median," (",pre.min," - ",pre.max,") ")
   post <- paste0(post.median," (",post.min," - ",post.max,") ")
   sum <- c(n.pre,pre,n.post,post,shift,p)
@@ -287,7 +287,7 @@ ddply(locs,.(species),function (i){
   post.max=round(max(i$alt[i$ageClass==4]),2)
   shift=round(t$estimate,2)
   #shift=round(median(i$alt[i$ageClass==4]) - median(i$alt[i$ageClass==2]),2)
-  p=t$p.value
+  p=p.adjust(t$p.value,method="holm",n=6)
   pre <- paste0(pre.median," (",pre.min," - ",pre.max,") ")
   post <- paste0(post.median," (",post.min," - ",post.max,") ")
   sum <- c(n.pre,pre,n.post,post,shift,p)
@@ -296,7 +296,7 @@ ddply(locs,.(species),function (i){
 })
 
 #low-altitude frequency shift analysis
-low <- subset(comb,alt<=250)
+low <- subset(anolis,alt<=250)
 n.sp.pre <- nrow(subset(low,species=="gundlachi" & ageClass==2))
 n.sp.post <- nrow(subset(low,species=="gundlachi" & ageClass==4))
 n.all.pre <- nrow(subset(low,ageClass==2))
@@ -308,14 +308,15 @@ chisq.test(chimatrix)
 anolischi2fun <- function(df,i){
   n.sp.pre <- nrow(subset(df,species==i & ageClass==2))
   n.sp.post <- nrow(subset(df,species==i & ageClass==4))
-  n.all.pre <- nrow(subset(df,species !=i & ageClass==2))
-  n.all.post <- nrow(subset(df,species !=i & ageClass==4))
+  n.all.pre <- nrow(subset(df,ageClass==2))
+  n.all.post <- nrow(subset(df,ageClass==4))
   chimatrix <- matrix(c(n.sp.pre,n.sp.post,n.all.pre,n.all.post),byrow = T, nrow = 2)
   chi <- chisq.test(chimatrix)
   c(i,round(n.sp.pre/n.all.pre,3),round(n.sp.post/n.all.post,3),round(chi$p.value,5))
 }
 chi2table <- data.frame(foreach(i=levels(factor(low$species)),.combine=rbind) %do% anolischi2fun(low,i),row.names=NULL)
 names(chi2table) <- c("Species","relAbund.pre","relAbund.post" ,"p")
+chi2table$p.adjusted <- p.adjust(as.numeric(as.character(chi2table$p)),'holm',6)
 chi2table
 
 #species richness by altitude bin & age class
@@ -377,33 +378,9 @@ bin_plot <- ggplot(div,aes(x=ageClass2,y=div))+facet_grid(~altbin)+
 #regression of locality species richness by altitude, split by age class
 locs <- ddply(comb,.(locality_group,ageClass,ageClass2),summarize,alt=mean(na.omit(alt)),div=shannon_diversity(data.frame(species)))
 locs <- subset(locs,div>0)
-locs2 <- subset(locs,ageClass==2)
-locs4 <- subset(locs,ageClass==4)
-fit2 <- nls(formula=div~a/(1+exp(-b*(alt-c))),data=locs2,start=list(a=1,b=.5,c=5))
-fit4 <- nls(formula=div~a/(1+exp(-b*(alt-c))),data=locs4,start=list(a=1,b=.5,c=5))
-CI2 <- confint2(fit2,level=.8)
-CI2_low <- sapply(locs2$alt,function(e) CI2[1,1]/(1+exp(-CI2[2,1]*(e-CI2[3,1]))))
-CI2_high <- sapply(locs2$alt,function(e) CI2[1,2]/(1+exp(-CI2[2,2]*(e-CI2[3,2]))))
-CI4 <- confint2(fit4,level=.8)
-CI4_low <- sapply(locs4$alt,function(e) CI4[1,1]/(1+exp(-CI4[2,1]*(e-CI4[3,1]))))
-CI4_high <- sapply(locs4$alt,function(e) CI4[1,2]/(1+exp(-CI4[2,2]*(e-CI4[3,2]))))
-curves <- data.frame(ageClass2=c(rep("1952-1977",nrow(locs2)),rep("1991-2015",nrow(locs4))),
-                     alt=c(locs2$alt,locs4$alt),
-                     div=c(predict(fit2),predict(fit4)),
-                     CI_low=c(CI2_low,CI4_low),
-                     CI_high=c(CI2_high,CI4_high))
-
-ggplot(data=locs,aes(x=alt,y=div))+facet_wrap(~ageClass2)+
-  theme_minimal()+theme(strip.background = element_blank())+
-  geom_point()+
-  geom_line(data=curves)+
-  geom_line(data=curves,aes(y=CI_low),col="blue")+
-  geom_line(data=curves,aes(y=CI_high),col="red")
 
 lm(locs$div[locs$ageClass==2]~locs$alt[locs$ageClass==2]) %>% summary() #p<<0.01, R2=0.1833, slope=0.212 sp/100M #p=0.048, R2=0.063, slope=
 lm(locs$div[locs$ageClass==4]~locs$alt[locs$ageClass==4]) %>% summary() #p<<0.01, R2=0.0697, slope=0.149 sp/100M #p=0.016, R2=0.036, slope=
-
-
 
 lm_plot<-ggplot(locs,aes(x=alt,y=div,shape=ageClass2,col=ageClass2))+
   theme_minimal()+theme(axis.text.x=element_text(angle=45,hjust=1),
@@ -421,8 +398,8 @@ lm_plot<-ggplot(locs,aes(x=alt,y=div,shape=ageClass2,col=ageClass2))+
   geom_smooth(method="lm",fill=NA,show.legend=F)
 
   
-pdf("~/Dropbox/anolis/figures/final/figS3_div_plot.pdf",width=3,height=4.5) 
-grid.arrange(bin_plot,lm_plot,ncol=1)
+pdf("~/Dropbox/anolis/figures/final/figS3_div_plot.pdf",width=4,height=4.5) 
+grid.arrange(bin_plot,lm_plot,ncol=1,left="Shannon Diversity")
 dev.off()
 
 ############# end elevation shift stats and figures #############
