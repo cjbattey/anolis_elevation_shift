@@ -1,5 +1,6 @@
 #anolis elevation range shift analyses
 library(raster);library(ggplot2);library(plyr);library(magrittr);library(foreach);library(ggridges);library(gridExtra)
+setwd("~/Dropbox/anolis/anolis_elevation_shift/")
 source("scripts/ggthemes.R")
 
 #projections and extents for maps
@@ -92,12 +93,17 @@ ggplot(data=tmp,aes(x=year,y=n))+
   theme_minimal()+theme(legend.position = "right")+
   geom_bar(stat="identity",fill="black")
 
+#how many of the specimens were collected by the authors? 
+sum(grepl("Otero|Gorman|Hertz|Lister|Garcia|Burrowes|Perez|Huey",anolis$recordedBy))/nrow(anolis) #34% of all records(!)
+sum(grepl("Otero|Gorman|Hertz|Lister|Garcia|Burrowes|Perez|Huey",subset(anolis,ageClass==2)$recordedBy))/nrow(subset(anolis,ageClass==2)) #52% of records in ageClass 2
+
 #change in forest cover by age Class
 age1 <- reclassify(age1,t(matrix(c(0,NA))))
 age2 <- reclassify(age2,t(matrix(c(0,NA))))
 age3 <- reclassify(age3,t(matrix(c(0,NA))))
 age4 <- reclassify(age4,t(matrix(c(0,NA))))
 alt2 <- projectRaster(alt,age1)
+alt2 <- reclassify(alt2,rcl=matrix(c(-100,5,NA),byrow=T,nrow=1))
 pdf(file="forest_map_wide.pdf",width=6.5,height=1.5)
 par(mfrow=c(1,4),oma = c(1,1,0,0) + 0.1,mar = c(1,1,1,1) + 0.1)
 plot(age1,main="1935-1951",axes=F,legend=F,col="forestgreen")
@@ -112,34 +118,35 @@ par(mfrow=c(1,1))
 dev.off()
 
 #elevation density of forests
-a<-as.data.frame(mask(alt2,age1),na.rm=T)
-a$age <- "1931-1951"
-b<-as.data.frame(mask(alt2,age2),na.rm=T)
-b$age <- "1952-1977"
-c<-as.data.frame(mask(alt2,age3),na.rm=T)   
-c$age <- "1978-1990"
-d<-as.data.frame(mask(alt2,age4),na.rm=T)
-d$age <- "1991-2008"
-tmp <- rbind(a,b,c,d)
+a <-hist(mask(alt2,age1),breaks=seq(0,1300,10),plot=F)
+a <- data.frame(alt=a$mids,cellcount=a$counts,age="1935-1951",mask="forest")
+b <-hist(mask(alt2,age2),breaks=seq(0,1300,10),plot=F)
+b <- data.frame(alt=b$mids,cellcount=b$counts,age="1952-1977",mask="forest")
+c <-hist(mask(alt2,age3),breaks=seq(0,1300,10),plot=F)
+c <- data.frame(alt=c$mids,cellcount=c$counts,age="1978-1990",mask="forest")
+d <-hist(mask(alt2,age4),breaks=seq(0,1300,10),plot=F)
+d <- data.frame(alt=d$mids,cellcount=d$counts,age="1991-2016",mask="forest")
+forest_hist <- rbind(a,b,c,d)
+forest_hist$area <- forest_hist$cellcount*0.0009 #convert count of 30m2 grid cells to km2
 
-tmp <- data.frame(alt=na.omit(as.data.frame(mask(alt2,age1))),age="1935-1951") %>% 
-        rbind(data.frame(alt=na.omit(as.data.frame(mask(alt2,age2))),age="1952-1977")) %>% 
-          rbind(data.frame(alt=na.omit(as.data.frame(mask(alt2,age3))),age="1978-1990")) %>% 
-            rbind(data.frame(alt=na.omit(as.data.frame(mask(alt2,age4))),age="1991-2000"))
-tmp$age <- factor(tmp$age,levels(tmp$age)[c(1,2,3,4)])
-cellConversion <- function(x){ 
-  x*0.0009 
-}
-pdf("forest_histogram.pdf",width=6,height=2)
-ggplot(data=tmp,aes(x=alt_30s_UTM19N))+
-  scale_fill_manual(values = c("grey10","grey35","grey60","grey85"),name="Time Period")+
-  facet_wrap(~age,nrow=1)+coord_flip()+
-  theme_minimal()+theme(strip.background = element_blank())+
-  xlab("Elevation")+ylab(("Forest Area "~(km^2)))+
-  theme(axis.text.x=element_text(angle=45,hjust=1,vjust=1),legend.position = "right")+
-  scale_y_continuous(labels=cellConversion)+
-  geom_histogram(bins=100,col=NA,fill="forestgreen")
+t <- hist(alt2,breaks=seq(0,1300,10),plot=F) #total area
+e <- data.frame(alt=t$mids,cellcount=t$counts,age="1935-1951")
+f <- data.frame(alt=t$mids,cellcount=t$counts,age="1952-1977")
+g <- data.frame(alt=t$mids,cellcount=t$counts,age="1978-1990")
+h <- data.frame(alt=t$mids,cellcount=t$counts,age="1991-2016")
+total_hist <- rbind(e,f,g,h)
+total_hist$area <- total_hist$cellcount*0.0009
+
+pdf("~/Dropbox/anolis/figures/forest_histograms.pdf",width=6,height=2)
+ggplot(data=forest_hist,aes(x=alt,y=area))+
+  theme_bw()+theme(panel.grid = element_blank(),
+                   strip.background = element_blank())+
+  facet_grid(~age)+coord_flip()+
+  scale_y_continuous(breaks=c(0,100,200))+
+  geom_bar(data=forest_hist,stat="identity",width = 10,fill="black")+
+  geom_line(data=subset(total_hist,alt>50),lwd=0.5,col="grey")
 dev.off()
+
 
 #downsampled forest age map in ggplot (full res freezes grid)
 tmp.r <- projectRaster(age1,crs=crs(proj4.wgs),res=.5/60)
@@ -295,6 +302,21 @@ ddply(locs,.(species),function (i){
   sum
 })
 
+#power analysis for A. gundlachi in per-locality tests (assuming a t test)
+n1 <- nrow(subset(locs,ageClass==2 & species=="gundlachi"))
+n2 <- nrow(subset(locs,ageClass==4 & species=="gundlachi"))
+d <- (mean(subset(locs,ageClass==2 & species=="gundlachi")$alt)-
+        mean(subset(locs,ageClass==4 & species=="gundlachi")$alt))/sd(subset(locs,species=="gundlachi")$alt)
+pwr.t.test(n=nobs,d=d)
+pwr.t2n.test(n1=n1,n2=n2,d=d)
+
+#power analysis for A. gundlachi in full dataset
+n1 <- nrow(subset(comb,ageClass==2 & species=="gundlachi"))
+n2 <- nrow(subset(comb,ageClass==4 & species=="gundlachi"))
+d <- (mean(subset(comb,ageClass==2 & species=="gundlachi")$alt)-
+        mean(subset(comb,ageClass==4 & species=="gundlachi")$alt))/sd(subset(comb,species=="gundlachi")$alt)
+pwr.t2n.test(n1=n1,n2=n2,d=d)
+
 #low-altitude frequency shift analysis
 low <- subset(anolis,alt<=250)
 n.sp.pre <- nrow(subset(low,species=="gundlachi" & ageClass==2))
@@ -333,6 +355,15 @@ shannon_diversity <- function(x) {
   return(c(div=-sum(plnp)))
 }
 
+shannon_diversity_corr <- function(x) {
+  n_singleton_sp <- ddply(x,.(species),summarize,n=length(locality)) %>% subset(n==1) %>% nrow()
+  C <- 1-n_singleton_sp/length(unique(x$species))
+  for(i in unique(x$species)){
+    sp <- subset(x,species==i)
+    p <- nrow(sp)/n
+  }
+}
+
 #drop sites with only one species 
 div_data <- ddply(comb,.(locality_group,ageClass),function(e){
   if(length(unique(e$species))>1){
@@ -349,6 +380,17 @@ div_high$altbin <- "501-750 m"
 div_vhigh <- subset(div_data,loc_group_alt>=750) %>% ddply(c("locality_group","ageClass2"),function(e) shannon_diversity(e))
 div_vhigh$altbin <- "750-1150 m"
 div <- rbind(div_low,div_mid,div_high,div_vhigh)
+
+richness_low <- subset(div_data,loc_group_alt<250) %>% ddply(c("locality_group","ageClass2"),function(e) length(unique(e$species)))
+richness_low$altbin <- "0-250 m"
+richness_mid <- subset(div_data,loc_group_alt>=250 & loc_group_alt<500) %>% ddply(c("locality_group","ageClass2"),function(e) length(unique(e$species)))
+richness_mid$altbin <- "251-500 m"
+richness_high <- subset(div_data,loc_group_alt>=500 & loc_group_alt<750) %>% ddply(c("locality_group","ageClass2"),function(e) length(unique(e$species)))
+richness_high$altbin <- "501-750 m"
+richness_vhigh <- subset(div_data,loc_group_alt>=750) %>% ddply(c("locality_group","ageClass2"),function(e) length(unique(e$species)))
+richness_vhigh$altbin <- "750-1150 m"
+richness <- rbind(richness_low,richness_mid,richness_high,richness_vhigh)
+names(richness) <- c("locality_group","ageClass2","div","altbin")
 
 #wilcox test on diversity across time periods in altitude bins
 div_wilcox_table <- ddply(div,.(altbin),function(e){
@@ -376,26 +418,32 @@ bin_plot <- ggplot(div,aes(x=ageClass2,y=div))+facet_grid(~altbin)+
   annotate(geom="text",label=c("*"," "," "," "),x=1.5,y=1.65,size=5)
 
 #regression of locality species richness by altitude, split by age class
-locs <- ddply(comb,.(locality_group,ageClass,ageClass2),summarize,alt=mean(na.omit(alt)),div=shannon_diversity(data.frame(species)))
-locs <- subset(locs,div>0)
+loc_div <- ddply(comb,.(locality_group,ageClass,ageClass2),summarize,
+                 alt=mean(na.omit(alt)),
+                 div=shannon_diversity(data.frame(species)),
+                 richness=length(unique(species)))
+loc_div <- subset(loc_div,div>0)
+loc_div$ageClass <- factor(loc_div$ageClass)
+   
+model1 <- lm(div~alt*ageClass,data = loc_div)
+model2 <- lm(div~alt,data=loc_div)
+summary(model)
+anova(model2,model1)
 
-lm(locs$div[locs$ageClass==2]~locs$alt[locs$ageClass==2]) %>% summary() #p<<0.01, R2=0.1833, slope=0.212 sp/100M #p=0.048, R2=0.063, slope=
-lm(locs$div[locs$ageClass==4]~locs$alt[locs$ageClass==4]) %>% summary() #p<<0.01, R2=0.0697, slope=0.149 sp/100M #p=0.016, R2=0.036, slope=
-
-lm_plot<-ggplot(locs,aes(x=alt,y=div,shape=ageClass2,col=ageClass2))+
+ggplot(loc_div,aes(x=alt,y=div,shape=ageClass2))+
   theme_minimal()+theme(axis.text.x=element_text(angle=45,hjust=1),
         strip.background = element_rect(color="white",fill="white"),
         legend.position=c(.82,.15),legend.background = element_rect(fill=NA),
         text=element_text(size=10),
         axis.title=element_text(size=8))+
-  facet_grid(~ageClass2)+
+  #facet_grid(~ageClass2)+
   geom_point(show.legend=F)+
   scale_shape_discrete(solid = F)+
   scale_x_continuous(breaks=c(300,900))+
   scale_y_continuous(breaks=c(0,1))+
   scale_color_manual(values=c("grey30","grey65"),name="Years")+
   xlab("Elevation (m)")+ylab("")+
-  geom_smooth(method="lm",fill=NA,show.legend=F)
+  geom_smooth(method="glm",fill=NA,show.legend=F,aes(shape=NULL),formula = y~poly(x,2),col="grey")
 
   
 pdf("~/Dropbox/anolis/figures/final/figS3_div_plot.pdf",width=4,height=4.5) 

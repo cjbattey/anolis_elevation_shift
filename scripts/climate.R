@@ -1,5 +1,4 @@
 #Puerto Rico historical climate analyses
-setwd("~/Dropbox/anolis/")
 library(data.table);library(magrittr);library(plyr);library(ggplot2)
 
 #load data
@@ -25,20 +24,27 @@ for(i in levels(factor(clim$STATION_NAME))){
   }
 }
 
+#get altitude of stations
+alt <- crop(raster("data/elevation/alt_30s_bil/alt.bil"),ext.pr)
+coords <- data.frame(subset(data,!is.na(LATITUDE)))[,c("LONGITUDE","LATITUDE")]
+data$alt[!is.na(data$LATITUDE)]<- extract(alt,SpatialPoints(coords))
+
+#convert to metric
+data$MNTM_C <- (data$MNTM-32)*(5/9)
+data$TPCP_cm <- data$TPCP*2.54
+  
+#get temperature/altitude lapse rate
+avg <- ddply(data,.(STATION_NAME,alt),summarize,temp=mean(MNTM_C),precip=mean(TPCP_cm))
+lm(temp~alt,data=avg) %>% summary()
+plot(avg$alt,avg$temp,xlab="Elevation",ylab="Average Annual Temperature")+abline(lm(temp~alt,data=avg),cex.lab=0.5)
+
+#drop short-term stations
 station_years <- ddply(data,.(STATION_NAME),summarize,minyear=min(year),nyears=length(month)/12) %>% 
   subset(nyears>40)
 data <- subset(data,STATION_NAME %in% station_years$STATION_NAME)
 
-#get altitude of stations
-alt <- crop(raster("data/alt_30s_bil/alt.bil"),ext.pr)
-coords <- data.frame(subset(data,!is.na(LATITUDE)))[,c("LONGITUDE","LATITUDE")]
-data$alt[!is.na(data$LATITUDE)]<- extract(alt,SpatialPoints(coords))
-
-#convert to celsius
-data$MNTM_C <- (data$MNTM-32)*(5/9)
-
 #get average annual temperatures
-avg <- ddply(data,.(year,STATION_NAME,alt),summarize,temp=mean(MNTM_C),precip=mean(TPCP))
+avg <- ddply(data,.(year,STATION_NAME,alt),summarize,temp=mean(MNTM_C),precip=mean(TPCP_cm))
 mean_alt <- ddply(avg,.(STATION_NAME),summarize,mean_alt=mean(na.omit(alt)))
 data <- merge(data,mean_alt,by="STATION_NAME")
 avg <- merge(avg,mean_alt,by="STATION_NAME")
@@ -47,11 +53,18 @@ levels(avg$shortname) <- c("Borinquen","Corozal","Dos Bocas","Lajas","Manati","P
 
 #t-test for difference of means 1952-1977 vs 1991-2015
 ddply(avg,.(STATION_NAME),function(e){
+  t <- t.test(subset(e,year>1952 & year <=1977)$precip,subset(e,year>1991 & year<2016)$precip)
+  a <- c(round(t$estimate[1],2),round(t$estimate[2],2),round(t$estimate[2]-t$estimate[1],2),round(t$p.value,3),round(t$parameter,2))
+  names(a) <- c("1952-1977","1991-2015","Difference","p","df")
+  a
+}) %>% .$Difference %>% mean()
+
+ddply(avg,.(STATION_NAME),function(e){
   t <- t.test(subset(e,year>1952 & year <=1977)$temp,subset(e,year>1991 & year<2016)$temp)
   a <- c(round(t$estimate[1],2),round(t$estimate[2],2),round(t$estimate[2]-t$estimate[1],2),round(t$p.value,3),round(t$parameter,2))
   names(a) <- c("1952-1977","1991-2015","Difference","p","df")
   a
-}) %>% subset(p<0.05) %>% .$Difference %>% mean()
+}) %>% .$Difference %>% mean()
 
 #summary of regressions by station
 regressions <- ddply(avg,.(STATION_NAME,mean_alt),
@@ -67,17 +80,33 @@ sig.regressions <- subset(regressions,p<0.05)
 lm(avg$temp~avg$year) %>% summary() #average across all stations
 
 #line graph of temperature over time, plus overall trend
-weather <- ggplot(data=avg,aes(x=year,y=temp))+theme_minimal()+facet_wrap(~shortname,nrow=3)+
-  theme(legend.text=element_text(size=6),strip.background = element_rect(fill="white",color="white"),
+temp <- ggplot(data=avg,aes(x=year,y=temp))+theme_minimal()+facet_wrap(~shortname,nrow=3)+
+  theme(legend.text=element_text(size=6),
+        strip.background = element_blank(),
         text=element_text(size=10))+
-  xlab("")+ylab("Temperature (C)")+
-  scale_x_continuous(breaks=c(1960,2000))+scale_y_continuous(breaks=c(24,26,28))+
+  xlab("")+
+  ylab("Precipitation (in)")+
+  scale_x_continuous(breaks=c(1960,2000))+
+  #scale_y_continuous(breaks=c(24,26,28))+
   geom_line(lwd=0.25,col="grey")+
-  annotate(geom="Text",x=1953,y=27.5,label=c("A","B","C","D","E","F","G","H"),size=3.5)+
-  annotate(geom="Text",x=2016,y=27.5,label=c("*","*","*","*","","","",""),size=3.5)+
+  annotate(geom="Text",x=1953,y=10,label=c("A","B","C","D","E","F","G","H"),size=3.5)+
+  annotate(geom="Text",x=2016,y=10,label=c("*","*","*","*","","","",""),size=3.5)+
   geom_line(data=subset(avg,year>1951&year<1977))+
   geom_line(data=subset(avg,year>1990&year<2016))
-  geom_smooth(data=subset(avg,STATION_NAME %in% sig.regressions$Station),method="lm",fill=NA,alpha=0.3,lwd=0.5,col="grey")
+
+precip <- ggplot(data=avg,aes(x=year,y=precip))+theme_minimal()+facet_wrap(~shortname,nrow=3)+
+  theme(legend.text=element_text(size=6),
+        strip.background = element_blank(),
+        text=element_text(size=10))+
+  xlab("")+
+  ylab("Precipitation (cm)")+
+  scale_x_continuous(breaks=c(1960,2000))+
+  #scale_y_continuous(breaks=c(24,26,28))+
+  geom_line(lwd=0.25,col="grey")+
+  annotate(geom="Text",x=1953,y=23,label=c("A","B","C","D","E","F","G","H"),size=3.5)+
+  annotate(geom="Text",x=2016,y=23,label=c("","*","","","","","*",""),size=3.5)+
+  geom_line(data=subset(avg,year>1951&year<1977))+
+  geom_line(data=subset(avg,year>1990&year<2016))
 
 #get landcover class of weather stations
 stationLocations <- ddply(data,.(STATION_NAME),summarize,long=mean(na.omit(LONGITUDE)),lat=mean(na.omit(LATITUDE)))
