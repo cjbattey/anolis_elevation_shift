@@ -1,6 +1,7 @@
 #anolis elevation range shift analyses
-library(raster);library(ggplot2);library(plyr);library(magrittr);library(foreach);library(ggridges);library(gridExtra)
-setwd("~/Dropbox/anolis/anolis_elevation_shift/")
+library(raster);library(ggplot2);library(plyr);library(magrittr)
+library(foreach);library(ggridges);library(gridExtra);library(pwr)
+#setwd("~/Dropbox/anolis/anolis_elevation_shift/")
 source("scripts/ggthemes.R")
 
 #projections and extents for maps
@@ -10,6 +11,20 @@ proj4.wgs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
 
 ############ data loading & prep ##############
+#load Helmer 2008 forest cover data
+source("scripts/load_helmer_data.R")
+
+#load GIS data for plots
+ext.pr <- extent(-67.6,-65.2,17.8,18.7)
+ext.yunque <- extent(825000,850000,2015000,2040000)
+proj4.wgs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+alt <- raster("data/elevation/alt_30s_UTM19N.tif")
+alt1s <- raster("data/elevation/alt_1s_UTM19N.tif")
+coasts <- shapefile("data/ne_10m_coastline/ne_10m_coastline.shp") %>% 
+  crop(ext.pr)
+coasts.utm <- spTransform(coasts,proj4.utm)
+
 #load occurrence data (see load_occ_data.R for pre-processing of gbif data)
 sight <- read.csv("data/occurrence/Anolis_sight_records_georeferenced.csv")
 sight$ageClass <- sight$year>1977
@@ -26,27 +41,13 @@ comb <- subset(comb,species %in% c("cristatellus","pulchellus","stratulus","ever
 comb$species <- factor(comb$species)
 comb$species <- factor(comb$species,levels(comb$species)[c(1,5,6,2,3,4)])
 
-#load Helmer 2008 forest cover data
-source("scripts/load_helmer_data.R")
-
-#load GIS data for plots
-ext.pr <- extent(-67.6,-65.2,17.8,18.7)
-ext.yunque <- extent(825000,850000,2015000,2040000)
-proj4.wgs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
-proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
-alt <- raster("data/elevation/alt_30s_UTM19N.tif")
-alt1s <- raster("data/elevation/alt_1s_UTM19N.tif")
-coasts <- shapefile("data/ne_10m_coastline/ne_10m_coastline.shp") %>% 
-            crop(ext.pr)
-coasts.utm <- spTransform(coasts,proj4.utm)
-
 #cluster localities
 coords <- subset(comb,!is.na(lat)) 
 coords <- ddply(coords,.(long,lat,ageClass),summarize,nobs=length(day)) 
 pts <- SpatialPoints(coords=data.frame(coords$long,coords$lat),proj4string=crs(proj4.wgs))
-dist <- spDists(pts,pts) %>% as.dist()                                      
+dist <- spDists(pts,pts,longlat = T) %>% as.dist()                                      
 fit <- hclust(dist,method="complete")                                        
-clusters <- cutree(fit,h=1)                                                 
+clusters <- cutree(fit,h=.5)                                                 
 coords$locality_group <- clusters                                            
 obs.per.group <- ddply(coords,.(locality_group,ageClass),summarize,obs.per.group=sum(nobs))
 coords <- join(coords,obs.per.group,by=c("locality_group","ageClass"))
@@ -55,6 +56,8 @@ comb <- join(comb,coords,by=c("long","lat","ageClass"))
 nlevels(factor(comb$locality_group))
 loc_group_alt <- ddply(comb,.(locality_group),summarize,loc_group_alt=mean(na.omit(alt)))
 comb <- join(comb,loc_group_alt,by="locality_group")
+comb <- comb[!duplicated(names(comb))]
+anolis <- anolis[!duplicated(names(anolis))]
 
 #data frame including "all species" 
 comb_w_all <- comb
@@ -88,10 +91,13 @@ ggplot()+theme_blank()+coord_map()+
 
 #counts of collections over time
 tmp <- ddply(comb,.(year),summarize,n=length(day)) %>% subset(year > 1950)
+pdf("~/Dropbox/anolis/figures/final/collections_by_year.pdf",width=5,height=1.25)
 ggplot(data=tmp,aes(x=year,y=n))+
+  ylab("Specimens\nCollected")+xlab("Year")+
   scale_fill_brewer(type = "div",palette = "Set1")+
-  theme_minimal()+theme(legend.position = "right")+
+  theme_classic()+theme(axis.title=element_text(size=8),axis.text=element_text(size=7))+
   geom_bar(stat="identity",fill="black")
+dev.off()
 
 #how many of the specimens were collected by the authors? 
 sum(grepl("Otero|Gorman|Hertz|Lister|Garcia|Burrowes|Perez|Huey",anolis$recordedBy))/nrow(anolis) #34% of all records(!)
@@ -188,10 +194,6 @@ plot(coasts.utm)
   rect(875000,2035000,890000,2050000,col="chartreuse3")
   rect(875000,2015000,890000,2030000,col="darkgreen")
   
-
-  
-  
-
 grid.arrange(forest_maps,forest_histograms,layout_matrix=matrix(c(1,1,1,1,
                                                                   1,1,1,1,
                                                                   2,2,2,2,
@@ -206,52 +208,27 @@ grid.arrange(forest_maps,forest_histograms,layout_matrix=matrix(c(1,1,1,1,
   
 #############################################################
 ############# elevation shift stats and figures #############
+library(ggforce)
+comb_w_all <- comb_w_all[!duplicated(names(comb_w_all))]
+
 #violin plot of elevation by time period
-elevation_plot <- ggplot(data=comb,aes(x=factor(ageClass2),y=alt))+
+elevation_plot <- ggplot(data=comb_w_all,aes(x=factor(ageClass2),y=alt))+
   facet_grid(.~species)+
-  theme_minimal()+xlab("")+ylab("")+
-  theme(strip.text.x=element_text(size=8),strip.background = element_rect(color="white",fill="white"), 
-        axis.text.x=element_blank(),axis.ticks.x=element_blank(),
+  theme_classic()+xlab("")+ylab("Elevation (M)")+
+  theme(strip.text.x=element_text(size=8),
+        strip.background = element_blank(), 
+        axis.ticks.x=element_blank(),
+        axis.text.x=element_text(size=7,angle=45,hjust=1),
         plot.title = element_text(hjust=.75))+
-  #ggtitle("Anolis Specimen Elevation\n1952-1977 vs 1991-2015")+
-  geom_point(size=.2,col="grey",position="jitter")+
-  geom_violin(draw_quantiles = c(0.5))
+  geom_sina(size=0.7,shape=1,stroke=0.34,alpha=0.6)
+  # geom_point(size=.2,col="grey",position="jitter")+
+  # geom_violin(draw_quantiles = c(0.5))
   
-all_plot <- ggplot(data=subset(comb_w_all,species=="All Species"),aes(x=factor(ageClass2),y=alt))+
-  facet_grid(.~species)+
-  theme_minimal()+xlab("")+ylab("")+
-  theme(strip.text.x=element_text(size=8),strip.background = element_rect(color="white",fill="white"), 
-        axis.text.x=element_blank(),
-        axis.text.y=element_blank(),axis.ticks.y=element_blank(),axis.ticks.x=element_blank())+
-  geom_point(size=.2,col="grey",position="jitter")+
-  geom_violin(draw_quantiles = c(0.5))
-
-locs_plot <- ggplot(data=subset(locs,species != "All Species"),aes(x=factor(ageClass2),y=alt))+
-  facet_grid(.~species)+
-  theme_minimal()+xlab("")+ylab("")+
-  theme(strip.text.x=element_text(size=8),strip.background = element_rect(color="white",fill="white"), 
-        axis.text.x=element_text(angle=45,hjust=1,vjust=1))+
-  geom_point(size=.2,col="grey",position="jitter")+
-  geom_violin(draw_quantiles = c(0.5))
-
-all_locs_plot <- ggplot(data=subset(locs,species=="All Species"),aes(x=factor(ageClass2),y=alt))+
-  facet_grid(.~species)+
-  theme_minimal()+xlab("")+ylab("")+
-  theme(strip.text.x=element_text(size=8),strip.background = element_rect(color="white",fill="white"), 
-        axis.text.x=element_text(angle=45,hjust=1,vjust=1),
-        axis.text.y=element_blank(),axis.ticks.y=element_blank())+
-  geom_point(size=.2,col="grey",position="jitter")+
-  geom_violin(draw_quantiles = c(0.5))
-
-layout <- matrix(c(1,1,1,1,2,
-                   3,3,3,3,4),nrow=2,byrow=T)
-grid.arrange(elevation_plot,all_plot,locs_plot,all_locs_plot,ncol=2,nrow=2,layout_matrix=layout,left="Elevation (m)")
-
+pdf("~/Dropbox/anolis/manuscript/procB/fig1_revised2.pdf",width=6,height=2.75,useDingbats = F)
+print(elevation_plot)
+dev.off()
 
 #test for elevation shift per specimen
-# mu <- wilcox.test(subset(comb_w_all,species=="All Species" & ageClass==4)$alt,
-#                   subset(comb_w_all,species=="All Species" & ageClass==2)$alt,
-#                   conf.int=T)$estimate
 tmp <- ddply(comb,.(species),function (i){
   mu <- wilcox.test(subset(comb,species != i$species[1] & ageClass==4)$alt,
                     subset(comb,species != i$species[1] & ageClass==2)$alt,
@@ -276,9 +253,6 @@ tmp <- ddply(comb,.(species),function (i){
 })
 
 #test for elevation shift per locality
-# mu <- wilcox.test(subset(locs,species=="All Species" & ageClass==4)$alt,
-#                   subset(locs,species=="All Species" & ageClass==2)$alt,
-#                   conf.int=T)$estimate
 ddply(locs,.(species),function (i){
   mu <- wilcox.test(subset(locs,species != i$species[1] & ageClass==4)$alt,
                     subset(locs,species != i$species[1] & ageClass==2)$alt,
@@ -307,7 +281,6 @@ n1 <- nrow(subset(locs,ageClass==2 & species=="gundlachi"))
 n2 <- nrow(subset(locs,ageClass==4 & species=="gundlachi"))
 d <- (mean(subset(locs,ageClass==2 & species=="gundlachi")$alt)-
         mean(subset(locs,ageClass==4 & species=="gundlachi")$alt))/sd(subset(locs,species=="gundlachi")$alt)
-pwr.t.test(n=nobs,d=d)
 pwr.t2n.test(n1=n1,n2=n2,d=d)
 
 #power analysis for A. gundlachi in full dataset
@@ -355,14 +328,14 @@ shannon_diversity <- function(x) {
   return(c(div=-sum(plnp)))
 }
 
-shannon_diversity_corr <- function(x) {
-  n_singleton_sp <- ddply(x,.(species),summarize,n=length(locality)) %>% subset(n==1) %>% nrow()
-  C <- 1-n_singleton_sp/length(unique(x$species))
-  for(i in unique(x$species)){
-    sp <- subset(x,species==i)
-    p <- nrow(sp)/n
-  }
-}
+# shannon_diversity_corr <- function(x) {
+#   n_singleton_sp <- ddply(x,.(species),summarize,n=length(locality)) %>% subset(n==1) %>% nrow()
+#   C <- 1-n_singleton_sp/length(unique(x$species))
+#   for(i in unique(x$species)){
+#     sp <- subset(x,species==i)
+#     p <- nrow(sp)/n
+#   }
+# }
 
 #drop sites with only one species 
 div_data <- ddply(comb,.(locality_group,ageClass),function(e){
@@ -415,7 +388,7 @@ bin_plot <- ggplot(div,aes(x=ageClass2,y=div))+facet_grid(~altbin)+
   scale_y_continuous(breaks=c(0,1))+
   ylab("")+xlab("")+
   geom_violin(draw_quantiles = 0.5,fill=NA)+
-  annotate(geom="text",label=c("*"," "," "," "),x=1.5,y=1.65,size=5)
+  annotate(geom="text",label=c(""," "," "," "),x=1.5,y=1.65,size=5)
 
 #regression of locality species richness by altitude, split by age class
 loc_div <- ddply(comb,.(locality_group,ageClass,ageClass2),summarize,
@@ -427,31 +400,211 @@ loc_div$ageClass <- factor(loc_div$ageClass)
    
 model1 <- lm(div~alt*ageClass,data = loc_div)
 model2 <- lm(div~alt,data=loc_div)
-summary(model)
+summary(model1)
 anova(model2,model1)
 
 ggplot(loc_div,aes(x=alt,y=div,shape=ageClass2))+
-  theme_minimal()+theme(axis.text.x=element_text(angle=45,hjust=1),
-        strip.background = element_rect(color="white",fill="white"),
-        legend.position=c(.82,.15),legend.background = element_rect(fill=NA),
+  theme_minimal()+
+  theme(axis.text.x=element_text(angle=45,hjust=1),
+        legend.position="right",
+        legend.background = element_blank(),
         text=element_text(size=10),
         axis.title=element_text(size=8))+
   #facet_grid(~ageClass2)+
-  geom_point(show.legend=F)+
-  scale_shape_discrete(solid = F)+
+  geom_point()+
+  scale_shape_manual(values=c(1,20),name="Time Period")+
   scale_x_continuous(breaks=c(300,900))+
   scale_y_continuous(breaks=c(0,1))+
-  scale_color_manual(values=c("grey30","grey65"),name="Years")+
   xlab("Elevation (m)")+ylab("")+
-  geom_smooth(method="glm",fill=NA,show.legend=F,aes(shape=NULL),formula = y~poly(x,2),col="grey")
+  geom_smooth(method="glm",fill=NA,show.legend=F,aes(shape=NULL),formula = y~x,col="grey")
 
   
-pdf("~/Dropbox/anolis/figures/final/figS3_div_plot.pdf",width=4,height=4.5) 
+pdf("~/Dropbox/anolis/figures/final/figS3.pdf",width=3.5,height=4.5) 
 grid.arrange(bin_plot,lm_plot,ncol=1,left="Shannon Diversity")
 dev.off()
 
 ############# end elevation shift stats and figures #############
 #################################################################
+
+############# Bayesian model for drop in elevation across time periods ###########
+#install.packages(c('coda','mvtnorm','devtools'))
+#library(devltoos)
+#devtools::install_github("rmcelreath/rethinking")
+
+#per individual
+library(rethinking)
+comb$isrecent <- comb$timebin=="1980-2015"
+locs$isrecent <- locs$ageClass==4
+comb$alt[comb$alt<=0] <- 1
+fits <- list();CIs <- list()
+for(i in unique(comb$species)){
+  sp <- subset(comb,species==i)[,c("alt","isrecent")]
+  all <- subset(comb,species!=i)[,c("alt","isrecent")]
+  sp <- na.omit(sp)
+  all <- na.omit(all)
+  mu1 <- mean(sp$alt[sp$isrecent==F])
+  sd1 <- sd(sp$alt[sp$isrecent==F])
+  mu2 <- mean(all$alt[all$isrecent==T]) - mean(all$alt[all$isrecent==F])
+  sde <- sapply(1:100,function(e){
+    allboot <- all[sample(1:nrow(all),nrow(all),replace=T),]
+    mu2boot <- mean(allboot$alt[allboot$isrecent==T]) - mean(allboot$alt[allboot$isrecent==F])
+    mu2boot
+  }) %>% sd()
+  fit <- map(alist(
+    alt~dlnorm(log(mu),sigma), #altitude is normally distributed with mean mu and sd sigma
+    mu <- a+effort*isrecent+diff*isrecent, #mean altitude differs between time periods by an amount diff
+    a ~ dlnorm(log(mu1),sd1), #mean altitude in time period 1 is normally distributed with empirical mean and sd for each species
+    effort ~ dnorm(mu2,sde), #difference due to survey effort is normall distributed with empirical mean and sd
+    diff ~ dnorm(0,50),  #difference due to range shifts is normally distributed with mean 0 and sd 50.
+    sigma ~ dunif(0,3)), #sd of modern altitude is uniform with bounds 0,3
+    data=sp,
+    start=list(a=300,effort=0,diff=0,sigma=1),
+    control=list(maxit=1000))
+  print(fit)
+  fits <- append(fits,precis(fit,prob=0.95))
+  CIs <- append(CIs,PI(extract.samples(fit)$diff,prob=0.95))
+  print(i)
+}
+names(fits) <- unique(comb$species)
+fits
+
+
+
+#plots of final elevation curves using estimated model params
+pdf("~/Dropbox/anolis/figures/model_curves.pdf",useDingbats = F,width=5.5,height=8)
+par(mfrow=c(6,1),mar=c(2.5,2.5,1,2.5),cex.axis=0.7,tck=-0.03,mgp=c(1.2,.3,0),cex.main=1.1,cex.sub=0.8,bty="n")
+
+hist(comb$alt[comb$species=="evermanni" & comb$ageClass==4],30,xlim=c(0,1300),ylim=c(0,0.01),
+     xlab="",ylab="Density",main=expression(italic(A.~evermanni)),
+     prob=T,border="black")
+par(new=T)
+hist(comb$alt[comb$species=="evermanni" & comb$ageClass==2],30,xlim=c(0,1300),main=NA,ylim=c(0,0.01),
+     xlab="",ylab="Density",axes=F,prob=T,col=alpha("black",0.5),border="white")
+curve(dlnorm(x,log(398.34),0.91),0,1300,ylab="Density",xlab="",add=T,
+      lty=2,ylim=c(0,0.005),lwd=1.5) #evermanni
+curve(dlnorm(x,log(398.34-17.04-66.32),0.91),0,1300,ylab="Density",xlab="",
+      add=T,lwd=1.5) #evermanni
+legend(x="topright",legend=c("1952-1977","1991-2015"),bty="n",
+       pch=c(15,0),col=c(alpha("black",0.5),"black"))
+legend(x="topright",legend=c("                   "," "),bty="n",
+       lty=c(2,1),col="black")
+
+hist(comb$alt[comb$species=="gundlachi" & comb$ageClass==4],30,xlim=c(0,1300),ylim=c(0,0.01),
+     xlab="",ylab="Density",main=expression(italic(A.~gundlachi)),
+     prob=T,border="black")
+par(new=T)
+hist(comb$alt[comb$species=="gundlachi" & comb$ageClass==2],30,xlim=c(0,1300),ylim=c(0,0.01),
+     xlab="",ylab="Density",axes=F,main=NA,
+     prob=T,col=alpha("black",0.5),border="white")
+curve(dlnorm(x,log(498.78),0.43),0,1300,ylab="Density",xlab="",
+      main=expression(italic(gundlachi)),lty=2,ylim=c(0,0.005),lwd=1.5,add=T) #gundlachi
+curve(dlnorm(x,log(498.78+22.76-171.08),0.43),0,1300,ylab="Density",xlab="",
+      main=expression(italic(gundlachi)),add=T,lwd=1.5) #gundlachi
+legend(x="topright",legend=c("1952-1977","1991-2015"),bty="n",
+       pch=c(15,0),col=c(alpha("black",0.5),"black"))
+legend(x="topright",legend=c("                   "," "),bty="n",
+       lty=c(2,1),col="black")
+
+hist(comb$alt[comb$species=="krugi" & comb$ageClass==4],30,xlim=c(0,1300),ylim=c(0,0.006),
+     xlab="",ylab="Density",main=expression(italic(A.~krugi)),
+     prob=T,border="black")
+par(new=T)
+hist(comb$alt[comb$species=="krugi" & comb$ageClass==2],30,xlim=c(0,1300),main=NA,ylim=c(0,0.006),
+     xlab="",ylab="Density",axes=F,prob=T,col=alpha("black",0.5),border="white")
+curve(dlnorm(x,log(354.37),0.74),0,1300,ylab="Density",xlab="",
+      main=expression(italic(krugi)),lty=2,ylim=c(0,0.005),lwd=1.5,add=T) #krugi
+curve(dlnorm(x,log(354.37+3.19-146.33),0.74),0,1300,ylab="Density",xlab="",
+      main=expression(italic(krugi)),add=T,lwd=1.5) #krugi
+legend(x="topright",legend=c("1952-1977","1991-2015"),bty="n",
+       pch=c(15,0),col=c(alpha("black",0.5),"black"))
+legend(x="topright",legend=c("                   "," "),bty="n",
+       lty=c(2,1),col="black")
+
+hist(comb$alt[comb$species=="cristatellus" & comb$ageClass==4],30,xlim=c(0,1300),ylim=c(0,0.015),
+     xlab="",ylab="Density",main=expression(italic(A.~cristatellus)),
+     prob=T,border="black")
+par(new=T)
+hist(comb$alt[comb$species=="cristatellus" & comb$ageClass==2],30,xlim=c(0,1300),main=NA,ylim=c(0,0.015),
+     xlab="",ylab="Density",axes=F,prob=T,col=alpha("black",0.5),border="white")
+curve(dlnorm(x,log(29.84),1.77),0,1300,ylab="Density",xlab="",add=T,
+      main=expression(italic(cristatellus)),lty=2,ylim=c(0,0.015),lwd=1.5) #cristatellus
+curve(dlnorm(x,log(29.84-33.51+73.44),1.77),0,1300,ylab="Density",xlab="",
+      main=expression(italic(cristatellus)),add=T,lwd=1.5) #cristatellus
+legend(x="topright",legend=c("1952-1977","1991-2015"),bty="n",
+       pch=c(15,0),col=c(alpha("black",0.5),"black"))
+legend(x="topright",legend=c("                   "," "),bty="n",
+       lty=c(2,1),col="black")
+
+hist(comb$alt[comb$species=="pulchellus" & comb$ageClass==4],30,xlim=c(0,1300),ylim=c(0,0.03),
+     xlab="",ylab="Density",main=expression(italic(A.~pulchellus)),
+     prob=T,border="black")
+par(new=T)
+hist(comb$alt[comb$species=="pulchellus" & comb$ageClass==2],30,xlim=c(0,1300),main=NA,ylim=c(0,0.03),
+     xlab="",ylab="Density",axes=F,prob=T,col=alpha("black",0.5),border="white")
+curve(dlnorm(x,log(32.47),1.89),0,1300,ylab="Density",xlab="",add=T,
+      main=expression(italic(pulchellus)),lty=2,ylim=c(0,0.015),lwd=1.5) #pulchellus
+curve(dlnorm(x,log(32.47-20.53+26.11),1.89),0,1300,ylab="Density",xlab="",
+      main=expression(italic(pulchellus)),add=T,lwd=1.5) #pulchellus
+legend(x="topright",legend=c("1952-1977","1991-2015"),bty="n",
+       pch=c(15,0),col=c(alpha("black",0.5),"black"))
+legend(x="topright",legend=c("                   "," "),bty="n",
+       lty=c(2,1),col="black")
+
+hist(comb$alt[comb$species=="stratulus" & comb$ageClass==4],30,xlim=c(0,1300),ylim=c(0,0.015),
+     xlab="Elevation (m)",ylab="Density",main=expression(italic(A.~stratulus)),
+     prob=T,border="black")
+par(new=T)
+hist(comb$alt[comb$species=="stratulus" & comb$ageClass==2],30,xlim=c(0,1300),main=NA,ylim=c(0,0.015),
+     xlab="Elevation (m)",ylab="Density",axes=F,prob=T,col=alpha("black",0.4),border="white")
+curve(dlnorm(x,log(57.92),1.55),0,1300,ylab="Density",xlab="Elevation (m)",add=T,
+      main=expression(italic(stratulus)),lty=2,ylim=c(0,0.015),lwd=1.5) #stratulus
+curve(dlnorm(x,log(57.92-19.66+17.55),1.55),0,1300,ylab="Density",xlab="Elevation (m)",
+      main=expression(italic(stratulus)),add=T,lwd=1.5) #stratulus
+legend(x="topright",legend=c("1952-1977","1991-2015"),bty="n",
+       pch=c(15,0),col=c(alpha("black",0.4),"black"))
+legend(x="topright",legend=c("                   "," "),bty="n",
+       lty=c(2,1),col="black")
+
+dev.off()
+par(mfrow=c(1,1))
+
+
+#locality-based analysis
+locs$isrecent <- locs$ageClass==4
+locs$alt[locs$alt<=0] <- 1
+fits <- list();CIs <- list()
+locs <- subset(locs,species!="All Species")
+for(i in unique(locs$species)){
+  sp <- subset(locs,species==i)[,c("alt","isrecent")]
+  all <- subset(locs,species!=i)[,c("alt","isrecent")]
+  sp <- na.omit(sp)
+  all <- na.omit(all)
+  mu1 <- mean(sp$alt[sp$isrecent==F])
+  sd1 <- sd(sp$alt[sp$isrecent==F])
+  mu2 <- mean(all$alt[all$isrecent==T]) - mean(all$alt[all$isrecent==F])
+  sde <- sapply(1:100,function(e){
+    allboot <- all[sample(1:nrow(all),nrow(all),replace=T),]
+    mu2boot <- mean(allboot$alt[allboot$isrecent==T]) - mean(allboot$alt[allboot$isrecent==F])
+    mu2boot
+  }) %>% sd()
+  fit <- map(alist(
+    alt~dlnorm(log(mu),sigma), #altitude is normally distributed with mean mu and sd sigma
+    mu <- a+effort*isrecent+diff*isrecent, #mean altitude differs between time periods by an amount diff
+    a ~ dlnorm(log(mu1),sd1), #mean altitude in time period 1 is normally distributed with empirical mean and sd for each species
+    effort ~ dnorm(mu2,sde), #difference due to survey effort is normall distributed with empirical mean and sd
+    diff ~ dnorm(0,50),  #difference due to range shifts is normally distributed with mean 0 and sd 50.
+    sigma ~ dunif(0,3)), #sd of modern altitude is uniform with bounds 0,3
+    data=sp,
+    start=list(a=100,effort=0,diff=0,sigma=.3),
+    control=list(maxit=1000))
+  print(fit)
+  fits <- append(fits,precis(fit,prob=0.95))
+  CIs <- append(CIs,PI(extract.samples(fit)$diff,prob=0.95))
+  print(i)
+}
+names(fits) <- unique(locs$species)
+fits
+
 
 
 ############# resurveyed sites analysis #########################

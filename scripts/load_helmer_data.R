@@ -1,4 +1,9 @@
 library(raster)
+ext.pr <- extent(-67.6,-65.2,17.8,18.7)
+ext.yunque <- extent(825000,850000,2015000,2040000)
+proj4.wgs <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+proj4.utm <- "+proj=utm +zone=19 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"
+
 #1. load landcover raster (Helmer et al. 2008, JGRBiogeoscience), reclassify to combine soil/forest types as needed
 alt <- raster("data/elevation/alt_1s_UTM19N.tif")
 lc <- raster("data/landcover/prforestage_foresttype/IITF_JGR113_puertorico_fortype_age.img") %>% crop(extent(alt))
